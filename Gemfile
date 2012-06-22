@@ -37,3 +37,6 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem 'heroku'
+
+gem 'taps'
+gem 'sqlite3'
