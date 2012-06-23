@@ -24,6 +24,7 @@ ja:
   # Sidebar
   ##########
   sidebar:
+    profile: "プロフィール"
     menu: "メニュー"
 
   ##########
@@ -39,3 +40,15 @@ ja:
 少しずつではありますが、コンテンツを増やしたりしていきます。\n
 今はブログしか置いていませんが、今後は描いた絵を載せたり、作ったゲームをアップしたりなどしようと思っています。\nどうか気長にお待ちください。
 今後とも宜しくお願い致します！＾＾\n\n"
+
+  ##########
+  # View
+  ##########
+  profile:
+    author: "Name："
+    author_text: "架慧"
+    twitter: "Twitter："
+    twitter_text: "@kae_kasui"
+    favorite: "Favorite："
+    favorite_text: "甘いもの/Ruby on Rails/漫画/みかん/ゲーム/卵/黒/電気製品/トイプードル/バームクーヘン/アニメ/etc..."
+ 
