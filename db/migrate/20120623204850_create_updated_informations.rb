@@ -1,6 +1,6 @@
-class CreateAdminUpdatedInformations < ActiveRecord::Migration
+class CreateUpdatedInformations < ActiveRecord::Migration
   def change
-    create_table :admin_updated_informations do |t|
+    create_table :updated_informations do |t|
       t.date :display_at
       t.integer :version_id
       t.string :title

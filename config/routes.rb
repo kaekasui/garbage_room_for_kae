@@ -1,5 +1,7 @@
 Kaenoheya::Application.routes.draw do
-  namespace :admin do resources :updated_informations end
+  namespace :admin do
+    resources :updated_informations
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
