@@ -1,0 +1,35 @@
+<h1>Listing admin_updated_informations</h1>
+
+<table>
+  <tr>
+    <th>Display at</th>
+    <th>Version</th>
+    <th>Title</th>
+    <th>News</th>
+    <th>Comment</th>
+    <th>Draft</th>
+    <th>Deleted at</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @admin_updated_informations.each do |admin_updated_information| %>
+  <tr>
+    <td><%= admin_updated_information.display_at %></td>
+    <td><%= admin_updated_information.version_id %></td>
+    <td><%= admin_updated_information.title %></td>
+    <td><%= admin_updated_information.news %></td>
+    <td><%= admin_updated_information.comment %></td>
+    <td><%= admin_updated_information.draft %></td>
+    <td><%= admin_updated_information.deleted_at %></td>
+    <td><%= link_to 'Show', admin_updated_information %></td>
+    <td><%= link_to 'Edit', edit_admin_updated_information_path(admin_updated_information) %></td>
+    <td><%= link_to 'Destroy', admin_updated_information, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Updated information', new_admin_updated_information_path %>
