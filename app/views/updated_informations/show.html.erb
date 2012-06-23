@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Display at:</b>
+  <%= @updated_information.display_at %>
+</p>
+
+<p>
+  <b>Version:</b>
+  <%= @updated_information.version_id %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @updated_information.title %>
+</p>
+
+<p>
+  <b>News:</b>
+  <%= @updated_information.news %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%= @updated_information.comment %>
+</p>
+
+<p>
+  <b>Draft:</b>
+  <%= @updated_information.draft %>
+</p>
+
+<p>
+  <b>Deleted at:</b>
+  <%= @updated_information.deleted_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_updated_information_path(@updated_information) %> |
+<%= link_to 'Back', updated_informations_path %>
