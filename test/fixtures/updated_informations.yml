@@ -1,19 +1,10 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  display_at: 2012-06-24
+updated_information1:
+  display_at: 2012-03-28
   version_id: 1
-  title: MyString
-  news: MyText
-  comment: MyText
+  title: リニューアルオープンについて
+  news: |
+    本日、リニューアルオープンを致しました。
+  comment: どうもお待たせしました！
   draft: false
-  deleted_at: 2012-06-24 06:33:18
+  deleted_at:
 
-two:
-  display_at: 2012-06-24
-  version_id: 1
-  title: MyString
-  news: MyText
-  comment: MyText
-  draft: false
-  deleted_at: 2012-06-24 06:33:18
