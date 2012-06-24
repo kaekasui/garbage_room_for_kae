@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120624053134) do
+ActiveRecord::Schema.define(:version => 20120624053350) do
 
   create_table "updated_informations", :force => true do |t|
     t.date     "display_at"
@@ -21,9 +21,10 @@ ActiveRecord::Schema.define(:version => 20120624053134) do
     t.text     "comment"
     t.boolean  "draft"
     t.datetime "deleted_at"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
     t.string   "mini_label"
+    t.string   "mini_label_option"
   end
 
 end
