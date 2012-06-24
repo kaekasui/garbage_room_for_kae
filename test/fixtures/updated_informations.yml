@@ -7,4 +7,5 @@ updated_information1:
   comment: どうもお待たせしました！
   draft: false
   deleted_at:
-
+  mini_label: INFO
+  mini_label_option: label-info
