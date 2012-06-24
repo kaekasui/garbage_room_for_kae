@@ -1,45 +1,62 @@
-<%= form_for(@updated_information) do |f| %>
-  <% if @updated_information.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@updated_information.errors.count, "error") %> prohibited this updated_information from being saved:</h2>
-
-      <ul>
-      <% @updated_information.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @updated_information, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :display_at, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :display_at, :class => 'date_select' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :version_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :version_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :title, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :title, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :news, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :news, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :comment, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :comment, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :draft, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :draft, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :deleted_at, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.datetime_select :deleted_at, :class => 'datetime_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :mini_label, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :mini_label, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :mini_label_option, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :mini_label_option, :class => 'text_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :display_at %><br />
-    <%= f.date_select :display_at %>
-  </div>
-  <div class="field">
-    <%= f.label :version_id %><br />
-    <%= f.number_field :version_id %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :news %><br />
-    <%= f.text_area :news %>
-  </div>
-  <div class="field">
-    <%= f.label :comment %><br />
-    <%= f.text_area :comment %>
-  </div>
-  <div class="field">
-    <%= f.label :draft %><br />
-    <%= f.check_box :draft %>
-  </div>
-  <div class="field">
-    <%= f.label :deleted_at %><br />
-    <%= f.datetime_select :deleted_at %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                updated_informations_path, :class => 'btn' %>
   </div>
 <% end %>
