@@ -17,20 +17,24 @@ ja:
     top: "ヵェの部屋♪"
 
   ##########
-  # Menu
-  ##########
-  menu:
-    top: "TOP"
-    top_text: "このページです。"
-    blog: "BLOG"
-    blog_text: "ヵェのブログです。日々のクダらない日常や、ホームページ運用、絵の進行状況、そしてオンラインゲームでの出来事などヵェの人生を綴っています。"
-
-  ##########
   # Sidebar
   ##########
   sidebar:
     profile: "プロフィール"
     menu: "メニュー"
+
+  profile:
+    author: "Name："
+    author_text: "架慧"
+    twitter: "Twitter："
+    twitter_text: "@kae_kasui"
+    favorite: "Favorite："
+    favorite_text: "甘いもの/Ruby on Rails/漫画/みかん/ゲーム/卵/黒/電気製品/トイプードル/バームクーヘン/アニメ/etc..."
+  menu:
+    top: "TOP"
+    top_text: "このページです。"
+    blog: "BLOG"
+    blog_text: "ヵェのブログです。日々のクダらない日常や、ホームページ運用、絵の進行状況、そしてオンラインゲームでの出来事などヵェの人生を綴っています。"
 
   ##########
   # View
@@ -48,14 +52,4 @@ ja:
       updated_informations: "更新情報"
       updated_informations_list: "もっと見る..."
 
-  ##########
-  # View
-  ##########
-  profile:
-    author: "Name："
-    author_text: "架慧"
-    twitter: "Twitter："
-    twitter_text: "@kae_kasui"
-    favorite: "Favorite："
-    favorite_text: "甘いもの/Ruby on Rails/漫画/みかん/ゲーム/卵/黒/電気製品/トイプードル/バームクーヘン/アニメ/etc..."
- 
+
