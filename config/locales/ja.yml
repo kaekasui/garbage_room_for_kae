@@ -52,4 +52,6 @@ ja:
       updated_informations: "更新情報"
       updated_informations_list: "もっと見る..."
 
-
+  updated_informations:
+    show:
+      title: "ヵェの足跡●●"

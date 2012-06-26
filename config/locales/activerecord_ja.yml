@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    attributes:
+      updated_information:
+        display_at: "更新日時"
+        title: "タイトル"
+        news: "更新内容"
+        comment: "コメント"
+
