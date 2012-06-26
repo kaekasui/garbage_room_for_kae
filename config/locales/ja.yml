@@ -53,5 +53,7 @@ ja:
       updated_informations_list: "もっと見る..."
 
   updated_informations:
+    index:
+      title: "ヵェの足跡●●"
     show:
       title: "ヵェの足跡●●"
