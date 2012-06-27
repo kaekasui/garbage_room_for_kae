@@ -1,6 +1,6 @@
 <%- model_class = UpdatedInformation.new.class -%>
 <div class="page-header">
-  <h3><%=t '.title', :default => model_class.model_name.human.pluralize %></h3>
+  <h3><%= link_to t('.title', :default => model_class.model_name.human.pluralize), updated_informations_path %></h3>
 </div>
 <table class="table table-striped">
   <thead>
