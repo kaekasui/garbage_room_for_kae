@@ -1,4 +1,6 @@
 Kaenoheya::Application.routes.draw do
+  resources :blogs
+
   resources :updated_informations
 
   namespace :admin do
