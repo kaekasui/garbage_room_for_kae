@@ -1,0 +1,33 @@
+<h1>Listing admin_blogs</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Blog category code</th>
+    <th>Contents1</th>
+    <th>Contents2</th>
+    <th>Draft</th>
+    <th>Deleted at</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @admin_blogs.each do |admin_blog| %>
+  <tr>
+    <td><%= admin_blog.title %></td>
+    <td><%= admin_blog.blog_category_code %></td>
+    <td><%= admin_blog.contents1 %></td>
+    <td><%= admin_blog.contents2 %></td>
+    <td><%= admin_blog.draft %></td>
+    <td><%= admin_blog.deleted_at %></td>
+    <td><%= link_to 'Show', admin_blog %></td>
+    <td><%= link_to 'Edit', edit_admin_blog_path(admin_blog) %></td>
+    <td><%= link_to 'Destroy', admin_blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Blog', new_admin_blog_path %>
