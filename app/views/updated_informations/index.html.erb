@@ -15,7 +15,7 @@
       <tr>
         <td><%= updated_information.display_at %></td>
         <td><%#= updated_information.version_id %></td>
-        <td><%= updated_information.title %></td>
+        <td><%= link_to updated_information.title, updated_information %></td>
       </tr>
     <% end %>
   </tbody>
