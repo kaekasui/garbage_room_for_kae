@@ -3,15 +3,24 @@
 one:
   title: MyString
   blog_category_code: 1
-  contents1: MyText
-  contents2: MyText
+  contents1: |
+    MyText
+    sidofaiup
+  contents2: |
+    MyText
+    aaaa
   draft: false
-  deleted_at: 2012-06-28 08:16:55
+  deleted_at:
 
 two:
   title: MyString
   blog_category_code: 1
-  contents1: MyText
-  contents2: MyText
+  contents1: |
+    MyText
+    MyText
+  contents2: |
+    MyText
+    MyText
+    MyText
   draft: false
-  deleted_at: 2012-06-28 08:16:55
+  deleted_at: 
