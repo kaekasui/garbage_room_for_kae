@@ -1,16 +1,6 @@
 <%- model_class = Blog.new.class -%>
-<div class="page-header">
-  <h4><%= link_to t('.title', :default => model_class.model_name.human.pluralize), blogs_path %></h4>
-</div>
-<table class="table table-striped">
-  <tbody>
-    <% @blogs.each do |blog| %>
-      <tr>
-        <td><%= blog.title %></td>
-        <td><%= blog.contents1 %></td>
-        <td><%=l blog.created_at %></td>
-      </tr>
-    <% end %>
-  </tbody>
+
+<table class="table">
+  <%= render :partial => @blogs, :spacer_template => "separator" %>
 </table>
 

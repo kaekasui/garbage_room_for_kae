@@ -1,0 +1,7 @@
+<tr>
+  <th><%= link_to blog.title, blog %></th>
+  <th style="font-weight:normal"><%=l blog.created_at %></th>
+</tr>
+<tr>
+  <td colspan="2"><%= to_br(blog.contents1).html_safe %></td>
+</tr>

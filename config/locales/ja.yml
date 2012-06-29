@@ -60,4 +60,5 @@ ja:
   blogs:
     index:
       title: "☆ヵェの日記☆"
-
+    blog:
+      continue: "続きを表示..."
