@@ -22,6 +22,7 @@ ja:
   sidebar:
     profile: "プロフィール"
     menu: "メニュー"
+    recent_blogs: "最近の記事"
 
   profile:
     author: "Name："

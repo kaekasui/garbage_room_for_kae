@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-  before_filter :menu_name
+  before_filter :menu_name, :show_sidebar
 
   # GET /blogs
   # GET /blogs.json
@@ -83,7 +83,13 @@ class BlogsController < ApplicationController
     end
   end
 
+  private
+
   def menu_name
-    @menu_name = Blog.model_name.human
+    @menu_name = I18n.t("menu.blog")
+  end
+
+  def show_sidebar
+    @recent_blogs = Blog.recent
   end
 end

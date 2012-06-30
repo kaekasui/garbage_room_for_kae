@@ -20,3 +20,12 @@
 </div>
 <% end %>
  
+<% if @menu_name == t("menu.blog") %>
+<div class="well sidebar-nav">
+  <h4><%= t("sidebar.recent_blogs") %></h4>
+  <ul class="nav nav-list">
+    <% @recent_blogs.each do |blog| %>
+    <li><%= link_to blog.title + " (" + l(blog.created_at, format: :very_short) + ")", blog %></li>
+    <% end %>
+  </ul>
+<% end %>
