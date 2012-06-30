@@ -1,4 +1,6 @@
 class BlogsController < ApplicationController
+  before_filter :menu_name
+
   # GET /blogs
   # GET /blogs.json
   def index
@@ -79,5 +81,9 @@ class BlogsController < ApplicationController
       format.html { redirect_to blogs_url }
       format.json { head :no_content }
     end
+  end
+
+  def menu_name
+    @menu_name = Blog.model_name.human
   end
 end
