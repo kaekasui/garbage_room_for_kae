@@ -42,3 +42,9 @@ gem 'taps'
 gem 'sqlite3'
 
 gem "twitter-bootstrap-rails"
+
+# OmniAuth
+gem 'omniauth-twitter'
+
+gem 'nokogiri'
+
