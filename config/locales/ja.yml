@@ -32,11 +32,16 @@ ja:
     favorite: "Favorite："
     favorite_text: "甘いもの/Ruby on Rails/漫画/みかん/ゲーム/卵/黒/電気製品/トイプードル/バームクーヘン/アニメ/etc..."
   menu:
+    my_account: "My Account"
     top: "TOP"
     top_text: "このページです。"
     blog: "BLOG"
     blog_text: "ヵェのブログです。日々のクダらない日常や、ホームページ運用、絵の進行状況、そしてオンラインゲームでの出来事などヵェの人生を綴っています。"
-    my_account: "My Account"
+    admin: "管理"
+    admin_blog: "ブログ"
+    admin_updated_information: "更新情報"
+    admin_dashboard: "ダッシュボード"
+    admin_setting: "設定"
 
   ##########
   # View
