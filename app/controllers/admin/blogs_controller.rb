@@ -1,4 +1,6 @@
 class Admin::BlogsController < ApplicationController
+  before_filter :admin_menu
+
   # GET /admin/blogs
   # GET /admin/blogs.json
   def index

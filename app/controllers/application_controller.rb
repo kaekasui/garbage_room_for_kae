@@ -4,6 +4,11 @@ class ApplicationController < ActionController::Base
 
   before_filter :reset_session_expires
 
+  def admin_menu
+    #TODO:admin権限以外をフィルタする
+    @admin_menu = true
+  end
+
   private
 
   def reset_session_expires
