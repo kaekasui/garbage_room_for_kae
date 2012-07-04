@@ -42,6 +42,12 @@ ja:
     admin_updated_information: "更新情報"
     admin_dashboard: "ダッシュボード"
     admin_setting: "設定"
+  admin_menu:
+    blogs: "ブログ一覧"
+    new_blog: "ブログ作成"
+    comments: "コメント一覧"
+    mail: "メール一覧"
+    access: "アクセス履歴"
 
   ##########
   # View
