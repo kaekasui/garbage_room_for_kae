@@ -1,41 +1,44 @@
-<%= form_for(@admin_blog) do |f| %>
-  <% if @admin_blog.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@admin_blog.errors.count, "error") %> prohibited this admin_blog from being saved:</h2>
-
-      <ul>
-      <% @admin_blog.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @blog, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :title, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :title, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :blog_category_code, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :blog_category_code, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :contents1, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :contents1, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :contents2, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :contents2, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :draft, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :draft, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :deleted_at, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.datetime_select :deleted_at, :class => 'datetime_select' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :blog_category_code %><br />
-    <%= f.number_field :blog_category_code %>
-  </div>
-  <div class="field">
-    <%= f.label :contents1 %><br />
-    <%= f.text_area :contents1 %>
-  </div>
-  <div class="field">
-    <%= f.label :contents2 %><br />
-    <%= f.text_area :contents2 %>
-  </div>
-  <div class="field">
-    <%= f.label :draft %><br />
-    <%= f.check_box :draft %>
-  </div>
-  <div class="field">
-    <%= f.label :deleted_at %><br />
-    <%= f.datetime_select :deleted_at %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                admin_blogs_path, :class => 'btn' %>
   </div>
 <% end %>
