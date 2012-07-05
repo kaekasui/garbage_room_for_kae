@@ -21,12 +21,12 @@
    <div class="container">
       <div class="content">
         <div class="row">
-          <div class="span8">
-            <%= yield %>
-          </div>
-          <div class="span4">
-            <%= render "shared/sidebar" %>
-          </div>
+          <% if @admin_menu %>
+            <div class="span12"><%= yield %></div>
+          <% else %>
+            <div class="span8"><%= yield %></div>
+            <div class="span4"><%= render "shared/sidebar" %></div>
+          <% end %>
         </div>
       </div>
 
