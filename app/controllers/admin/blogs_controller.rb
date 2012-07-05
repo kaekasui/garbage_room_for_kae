@@ -46,7 +46,7 @@ class Admin::BlogsController < ApplicationController
 
     respond_to do |format|
       if @admin_blog.save
-        format.html { redirect_to @admin_blog, notice: 'Blog was successfully created.' }
+        format.html { redirect_to admin_blogs_path, notice: 'Blog was successfully created.' }
         format.json { render json: @admin_blog, status: :created, location: @admin_blog }
       else
         format.html { render action: "new" }
