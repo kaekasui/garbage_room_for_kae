@@ -1,5 +1,10 @@
 <%- model_class = Blog.new.class -%>
-<%= notice %>
+<% if notice %>
+  <div class="alert alert-success">
+    <button class="close" data-dismiss="alert">×</button>
+    <%= notice %>
+  </div>
+<% end %>
 
 <table class="table">
   <thead>

@@ -6,4 +6,21 @@ ja:
         title: "タイトル"
         news: "更新内容"
         comment: "コメント"
-
+      admin/blog:
+        created_at: "作成日時"
+        title: "タイトル"
+        contents1: "内容1"
+        contents2: "内容2"
+        draft: "未公開"
+    errors:
+      template:
+        header:
+          other: "%{count}個のエラーが発生しました。"
+      messages:
+        blank: "を入力してください。"
+        too_long: "は、%{size}文字以内で入力してください。"
+#      models:
+#        admin/blog:
+#          attributes:
+#            title:
+#              too_long: "は、%{size}文字以内で入力してください。"
