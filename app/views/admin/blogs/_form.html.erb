@@ -13,25 +13,25 @@
   <% end %>
 
   <div class="control-group">
-    <%= f.label :created_at, class: 'control-label' %>
+    <%= f.label :created_at, class: 'control-label' %><%= mark_required(@admin_blog, :created_at) %>
     <div class="controls">
       <%= f.datetime_select :created_at, datetime_separator: "　", include_seconds: true, use_month_numbers: true, class: "date_time" %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :title, :class => 'control-label' %>
+    <%= f.label :title, :class => 'control-label' %><%= mark_required(@admin_blog, :title) %>
     <div class="controls">
       <%= f.text_field :title, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :contents1, :class => 'control-label' %>
+    <%= f.label :contents1, :class => 'control-label' %><%= mark_required(@admin_blog, :contents1) %>
     <div class="controls">
       <%= f.text_area :contents1, :class => 'text_area' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :contents2, :class => 'control-label' %>
+    <%= f.label :contents2, :class => 'control-label' %><%= mark_required(@admin_blog, :contents2) %>
     <div class="controls">
       <%= f.text_area :contents2, :class => 'text_area' %>
     </div>
