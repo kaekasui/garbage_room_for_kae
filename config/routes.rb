@@ -1,5 +1,7 @@
 Kaenoheya::Application.routes.draw do
 
+  resources :blog_comments
+
   resources :blogs, only: [:index, :show]
   resources :updated_informations, only: [:index, :show]
 

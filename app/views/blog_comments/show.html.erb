@@ -1,0 +1,70 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Blog:</b>
+  <%= @blog_comment.blog_id %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @blog_comment.title %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @blog_comment.author %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @blog_comment.content %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @blog_comment.url %>
+</p>
+
+<p>
+  <b>Mail:</b>
+  <%= @blog_comment.mail %>
+</p>
+
+<p>
+  <b>Ip:</b>
+  <%= @blog_comment.ip %>
+</p>
+
+<p>
+  <b>Host:</b>
+  <%= @blog_comment.host %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%= @blog_comment.password %>
+</p>
+
+<p>
+  <b>Salt:</b>
+  <%= @blog_comment.salt %>
+</p>
+
+<p>
+  <b>Admin:</b>
+  <%= @blog_comment.admin %>
+</p>
+
+<p>
+  <b>Mixi:</b>
+  <%= @blog_comment.mixi %>
+</p>
+
+<p>
+  <b>Draft:</b>
+  <%= @blog_comment.draft %>
+</p>
+
+
+<%= link_to 'Edit', edit_blog_comment_path(@blog_comment) %> |
+<%= link_to 'Back', blog_comments_path %>

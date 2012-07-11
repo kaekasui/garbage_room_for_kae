@@ -1,0 +1,47 @@
+<h1>Listing blog_comments</h1>
+
+<table>
+  <tr>
+    <th>Blog</th>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Content</th>
+    <th>Url</th>
+    <th>Mail</th>
+    <th>Ip</th>
+    <th>Host</th>
+    <th>Password</th>
+    <th>Salt</th>
+    <th>Admin</th>
+    <th>Mixi</th>
+    <th>Draft</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @blog_comments.each do |blog_comment| %>
+  <tr>
+    <td><%= blog_comment.blog_id %></td>
+    <td><%= blog_comment.title %></td>
+    <td><%= blog_comment.author %></td>
+    <td><%= blog_comment.content %></td>
+    <td><%= blog_comment.url %></td>
+    <td><%= blog_comment.mail %></td>
+    <td><%= blog_comment.ip %></td>
+    <td><%= blog_comment.host %></td>
+    <td><%= blog_comment.password %></td>
+    <td><%= blog_comment.salt %></td>
+    <td><%= blog_comment.admin %></td>
+    <td><%= blog_comment.mixi %></td>
+    <td><%= blog_comment.draft %></td>
+    <td><%= link_to 'Show', blog_comment %></td>
+    <td><%= link_to 'Edit', edit_blog_comment_path(blog_comment) %></td>
+    <td><%= link_to 'Destroy', blog_comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Blog comment', new_blog_comment_path %>
