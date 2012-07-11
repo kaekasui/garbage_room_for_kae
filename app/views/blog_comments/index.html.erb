@@ -1,47 +1,60 @@
-<h1>Listing blog_comments</h1>
-
-<table>
-  <tr>
-    <th>Blog</th>
-    <th>Title</th>
-    <th>Author</th>
-    <th>Content</th>
-    <th>Url</th>
-    <th>Mail</th>
-    <th>Ip</th>
-    <th>Host</th>
-    <th>Password</th>
-    <th>Salt</th>
-    <th>Admin</th>
-    <th>Mixi</th>
-    <th>Draft</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @blog_comments.each do |blog_comment| %>
-  <tr>
-    <td><%= blog_comment.blog_id %></td>
-    <td><%= blog_comment.title %></td>
-    <td><%= blog_comment.author %></td>
-    <td><%= blog_comment.content %></td>
-    <td><%= blog_comment.url %></td>
-    <td><%= blog_comment.mail %></td>
-    <td><%= blog_comment.ip %></td>
-    <td><%= blog_comment.host %></td>
-    <td><%= blog_comment.password %></td>
-    <td><%= blog_comment.salt %></td>
-    <td><%= blog_comment.admin %></td>
-    <td><%= blog_comment.mixi %></td>
-    <td><%= blog_comment.draft %></td>
-    <td><%= link_to 'Show', blog_comment %></td>
-    <td><%= link_to 'Edit', edit_blog_comment_path(blog_comment) %></td>
-    <td><%= link_to 'Destroy', blog_comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<%- model_class = BlogComment.new.class -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:blog_id) %></th>
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= model_class.human_attribute_name(:author) %></th>
+      <th><%= model_class.human_attribute_name(:content) %></th>
+      <th><%= model_class.human_attribute_name(:url) %></th>
+      <th><%= model_class.human_attribute_name(:mail) %></th>
+      <th><%= model_class.human_attribute_name(:ip) %></th>
+      <th><%= model_class.human_attribute_name(:host) %></th>
+      <th><%= model_class.human_attribute_name(:password) %></th>
+      <th><%= model_class.human_attribute_name(:salt) %></th>
+      <th><%= model_class.human_attribute_name(:admin) %></th>
+      <th><%= model_class.human_attribute_name(:mixi) %></th>
+      <th><%= model_class.human_attribute_name(:draft) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @blog_comments.each do |blog_comment| %>
+      <tr>
+        <td><%= link_to blog_comment.id, blog_comment_path(blog_comment) %></td>
+        <td><%= blog_comment.blog_id %></td>
+        <td><%= blog_comment.title %></td>
+        <td><%= blog_comment.author %></td>
+        <td><%= blog_comment.content %></td>
+        <td><%= blog_comment.url %></td>
+        <td><%= blog_comment.mail %></td>
+        <td><%= blog_comment.ip %></td>
+        <td><%= blog_comment.host %></td>
+        <td><%= blog_comment.password %></td>
+        <td><%= blog_comment.salt %></td>
+        <td><%= blog_comment.admin %></td>
+        <td><%= blog_comment.mixi %></td>
+        <td><%= blog_comment.draft %></td>
+        <td><%=l blog_comment.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_blog_comment_path(blog_comment), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      blog_comment_path(blog_comment),
+                      :method => :delete,
+                      :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Blog comment', new_blog_comment_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_blog_comment_path,
+            :class => 'btn btn-primary' %>
