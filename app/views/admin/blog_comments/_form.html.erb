@@ -1,69 +1,86 @@
-<%= form_for(@admin_blog_comment) do |f| %>
-  <% if @admin_blog_comment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@admin_blog_comment.errors.count, "error") %> prohibited this admin_blog_comment from being saved:</h2>
-
-      <ul>
-      <% @admin_blog_comment.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @blog_comment, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :blog_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :blog_id, :class => 'number_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :title, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :title, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :author, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :author, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :content, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :content, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :url, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :url, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :mail, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :mail, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :ip, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :ip, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :host, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :host, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :password, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :password, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :salt, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :salt, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :admin, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :admin, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :mixi, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :mixi, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :draft, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :draft, :class => 'check_box' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :blog_id %><br />
-    <%= f.number_field :blog_id %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :author %><br />
-    <%= f.text_field :author %>
-  </div>
-  <div class="field">
-    <%= f.label :content %><br />
-    <%= f.text_area :content %>
-  </div>
-  <div class="field">
-    <%= f.label :url %><br />
-    <%= f.text_field :url %>
-  </div>
-  <div class="field">
-    <%= f.label :mail %><br />
-    <%= f.text_field :mail %>
-  </div>
-  <div class="field">
-    <%= f.label :ip %><br />
-    <%= f.text_field :ip %>
-  </div>
-  <div class="field">
-    <%= f.label :host %><br />
-    <%= f.text_field :host %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.text_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :salt %><br />
-    <%= f.text_field :salt %>
-  </div>
-  <div class="field">
-    <%= f.label :admin %><br />
-    <%= f.check_box :admin %>
-  </div>
-  <div class="field">
-    <%= f.label :mixi %><br />
-    <%= f.check_box :mixi %>
-  </div>
-  <div class="field">
-    <%= f.label :draft %><br />
-    <%= f.check_box :draft %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                admin_blog_comments_path, :class => 'btn' %>
   </div>
 <% end %>
