@@ -1,5 +1,7 @@
 Kaenoheya::Application.routes.draw do
 
+  namespace :admin do resources :blog_comments end
+
   resources :blog_comments
 
   resources :blogs, only: [:index, :show]

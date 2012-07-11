@@ -1,0 +1,70 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Blog:</b>
+  <%= @admin_blog_comment.blog_id %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @admin_blog_comment.title %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @admin_blog_comment.author %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @admin_blog_comment.content %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @admin_blog_comment.url %>
+</p>
+
+<p>
+  <b>Mail:</b>
+  <%= @admin_blog_comment.mail %>
+</p>
+
+<p>
+  <b>Ip:</b>
+  <%= @admin_blog_comment.ip %>
+</p>
+
+<p>
+  <b>Host:</b>
+  <%= @admin_blog_comment.host %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%= @admin_blog_comment.password %>
+</p>
+
+<p>
+  <b>Salt:</b>
+  <%= @admin_blog_comment.salt %>
+</p>
+
+<p>
+  <b>Admin:</b>
+  <%= @admin_blog_comment.admin %>
+</p>
+
+<p>
+  <b>Mixi:</b>
+  <%= @admin_blog_comment.mixi %>
+</p>
+
+<p>
+  <b>Draft:</b>
+  <%= @admin_blog_comment.draft %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_blog_comment_path(@admin_blog_comment) %> |
+<%= link_to 'Back', admin_blog_comments_path %>

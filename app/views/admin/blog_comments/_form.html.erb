@@ -1,0 +1,69 @@
+<%= form_for(@admin_blog_comment) do |f| %>
+  <% if @admin_blog_comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_blog_comment.errors.count, "error") %> prohibited this admin_blog_comment from being saved:</h2>
+
+      <ul>
+      <% @admin_blog_comment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :blog_id %><br />
+    <%= f.number_field :blog_id %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :author %><br />
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </div>
+  <div class="field">
+    <%= f.label :mail %><br />
+    <%= f.text_field :mail %>
+  </div>
+  <div class="field">
+    <%= f.label :ip %><br />
+    <%= f.text_field :ip %>
+  </div>
+  <div class="field">
+    <%= f.label :host %><br />
+    <%= f.text_field :host %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.text_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :salt %><br />
+    <%= f.text_field :salt %>
+  </div>
+  <div class="field">
+    <%= f.label :admin %><br />
+    <%= f.check_box :admin %>
+  </div>
+  <div class="field">
+    <%= f.label :mixi %><br />
+    <%= f.check_box :mixi %>
+  </div>
+  <div class="field">
+    <%= f.label :draft %><br />
+    <%= f.check_box :draft %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
