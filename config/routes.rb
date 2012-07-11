@@ -1,14 +1,12 @@
 Kaenoheya::Application.routes.draw do
 
-  namespace :admin do resources :blog_comments end
-
-  resources :blog_comments
-
   resources :blogs, only: [:index, :show]
+  resources :blog_comments
   resources :updated_informations, only: [:index, :show]
 
   namespace :admin do
     resources :blogs
+    resources :blog_comments
     resources :updated_informations
   end
 
