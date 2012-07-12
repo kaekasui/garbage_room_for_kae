@@ -41,10 +41,11 @@ class BlogCommentsController < ApplicationController
   # POST /blog_comments.json
   def create
     @blog_comment = BlogComment.new(params[:blog_comment])
+    @blog = Blog.find(params[:blog_id])
 
     respond_to do |format|
       if @blog_comment.save
-        format.html { redirect_to @blog_comment, notice: 'Blog comment was successfully created.' }
+        format.html { redirect_to @blog, notice: 'Blog comment was successfully created.' }
         format.json { render json: @blog_comment, status: :created, location: @blog_comment }
       else
         format.html { render action: "new" }
@@ -78,6 +79,15 @@ class BlogCommentsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to blog_comments_url }
       format.json { head :no_content }
+    end
+  end
+
+  def confirm
+    @blog_comment = BlogComment.new(params[:blog_comment])
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @blog_comment }
     end
   end
 end
