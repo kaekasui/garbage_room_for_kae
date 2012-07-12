@@ -1,36 +1,36 @@
   <div class="control-group">
-    <%= f.label :title, :class => 'control-label' %>
+    <%= f.label :title, :class => 'control-label' %><%= mark_required(@blog_comment, :title) %>
     <div class="controls">
       <%= f.text_field :title, :class => 'text_field' %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :author, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :author, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :url, :class => 'control-label' %>
+ <div class="control-group">
+    <%= f.label :url, :class => 'control-label' %><%= mark_required(@blog_comment, :url) %>
     <div class="controls">
       <%= f.text_field :url, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :mail, :class => 'control-label' %>
+    <%= f.label :mail, :class => 'control-label' %><%= mark_required(@blog_comment, :mail) %>
     <div class="controls">
       <%= f.text_field :mail, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :content, :class => 'control-label' %>
+    <%= f.label :author, :class => 'control-label' %><%= mark_required(@blog_comment, :author) %>
+    <div class="controls">
+      <%= f.text_field :author, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :content, :class => 'control-label' %><%= mark_required(@blog_comment, :content) %>
     <div class="controls">
       <%= f.text_area :content, :class => 'text_area' %>
     </div>
   </div>
-<% unless @blog %>
+<% unless @menu_name == t("menu.blog") %>
   <div class="control-group">
-    <%= f.label :password, :class => 'control-label' %>
+    <%= f.label :password, :class => 'control-label' %><%= mark_required(@blog_comment, :password) %>
     <div class="controls">
       <%= f.password_field :password, :class => 'text_field' %>
     </div>

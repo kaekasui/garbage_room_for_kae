@@ -46,9 +46,9 @@ class BlogCommentsController < ApplicationController
     respond_to do |format|
       if @blog_comment.save
         format.html { redirect_to @blog, notice: 'Blog comment was successfully created.' }
-        format.json { render json: @blog_comment, status: :created, location: @blog_comment }
+        format.json { render json: @blog, status: :created, location: @blog_comment }
       else
-        format.html { render action: "new" }
+        format.html { render action: "confirm" }
         format.json { render json: @blog_comment.errors, status: :unprocessable_entity }
       end
     end
