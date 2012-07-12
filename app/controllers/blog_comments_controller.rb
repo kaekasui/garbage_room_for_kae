@@ -21,17 +21,6 @@ class BlogCommentsController < ApplicationController
     end
   end
 
-  # GET /blog_comments/new
-  # GET /blog_comments/new.json
-  def new
-    @blog_comment = BlogComment.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @blog_comment }
-    end
-  end
-
   # GET /blog_comments/1/edit
   def edit
     @blog_comment = BlogComment.find(params[:id])

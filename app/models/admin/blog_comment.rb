@@ -1,6 +1,8 @@
 class Admin::BlogComment < ActiveRecord::Base
   set_table_name :blog_comments
 
+  belongs_to :blog
+
   attr_accessible :admin, :author, :blog_id, :content, :draft, :host, :ip, :mail, :mixi, :password, :salt, :title, :url
 
   validates_presence_of :author, :content

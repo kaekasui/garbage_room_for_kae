@@ -1,6 +1,8 @@
 class Admin::Blog < ActiveRecord::Base
   set_table_name :blogs
 
+  has_many :blog_comments
+
   attr_accessible :created_at, :blog_category_code, :contents1, :contents2, :deleted_at, :draft, :title
 
   validates_presence_of :title, :contents1
