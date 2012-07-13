@@ -80,4 +80,6 @@ ja:
       title: "☆ヵェの日記☆"
     blog:
       continue: "続きを表示..."
-
+  blog_comments:
+    blog_comment:
+      admin: "管理者のみが閲覧可能なコメントです。"

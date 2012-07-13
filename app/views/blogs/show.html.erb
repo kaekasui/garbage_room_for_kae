@@ -8,3 +8,7 @@
 <%= form_for @blog_comment, html: {class: 'form-horizontal'}, url: confirm_blog_blog_comments_path(blog_id: @blog.id) do |f| %>
   <%= render partial: "blog_comments/form", locals: {f: f} %>
 <% end %>
+
+<table class="table">
+  <%= render :partial => @blog_comments, :spacer_template => "blog_comments/separator" %>
+</table>
