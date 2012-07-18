@@ -3,3 +3,7 @@
 <tr>
   <td colspan="2"><%= link_to_unless(blog.contents2.nil?, t(".continue"), blog) do %><% end %></td>
 </tr>
+
+<tr>
+  <td colspan="2" class="text_right">Comments(<%= blog.count_comments %>)</td>
+</tr>

@@ -3,6 +3,9 @@
   <tr>
     <td colspan="2"><%= to_br(@blog.contents2).html_safe %></td>
   </tr>
+  <tr>
+    <td colspan="2" class="text_right">Comments(<%= @blog.count_comments %>)</td>
+  </tr>
 </table>
 
 <%= form_for @blog_comment, html: {class: 'form-horizontal'}, url: confirm_blog_blog_comments_path(blog_id: @blog.id) do |f| %>
