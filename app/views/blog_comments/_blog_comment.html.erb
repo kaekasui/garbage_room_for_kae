@@ -6,14 +6,13 @@
 <% else %>
   <tr>
     <td><b><%= blog_comment.title %></b></td>
-    <td><%= l blog_comment.created_at %></td>
+    <td class="text_right"><%= l blog_comment.created_at %></td>
   </tr> 
   <tr>
     <td colspan="2"><%= to_br(blog_comment.content).html_safe %></td>
   </tr>
   <tr>
-    <td class="text_right"><%= blog_comment.author %></td>
-    <td>
+    <td colspan="2" class="text_right"><%= blog_comment.author %> -
       | <% if blog_comment.url.blank? then %>URL<% else %><%= link_to 'URL', blog_comment.url, :target => '_blank' %><% end %>
       | <% if blog_comment.mail.blank? then %>Mail<% else %><%= mail_to blog_comment.mail, 'Mail' %><% end %>
     </td>

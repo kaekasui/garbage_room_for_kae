@@ -30,6 +30,7 @@ class BlogCommentsController < ApplicationController
   # POST /blog_comments.json
   def create
     @blog_comment = BlogComment.new(params[:blog_comment])
+    @blog_comment.update_attributes(blog_id: params[:blog_id], ip: request.remote_ip)
     @blog = Blog.find(params[:blog_id])
 
     respond_to do |format|

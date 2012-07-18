@@ -17,7 +17,7 @@ class BlogsController < ApplicationController
   def show
     @blog = Blog.find(params[:id])
     @blog_comment = BlogComment.new
-    @blog_comments = BlogComment.all
+    @blog_comments = BlogComment.find_all_by_blog_id(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
