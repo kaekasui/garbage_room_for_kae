@@ -9,6 +9,8 @@ class Admin::Blog < ActiveRecord::Base
   validates_length_of :title, maximum: AVAILABLE_STRING_LENGTH, size: AVAILABLE_STRING_LENGTH
   validates_length_of :contents1, :contents2, maximum: AVAILABLE_TEXT_LENGTH, size: AVAILABLE_TEXT_LENGTH
 
+  default_scope where("deleted_at is null").order("created_at desc")
+
   def count_comments
     Admin::BlogComment.find_all_by_blog_id(self.id).count
   end

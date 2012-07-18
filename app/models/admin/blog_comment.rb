@@ -10,4 +10,7 @@ class Admin::BlogComment < ActiveRecord::Base
   validates_length_of :url, :mail, maximum: AVAILABLE_LONG_STRING_LENGTH, size: AVAILABLE_LONG_STRING_LENGTH
   validates_length_of :content, maximum: AVAILABLE_TEXT_LENGTH, size: AVAILABLE_TEXT_LENGTH
   validates_length_of :password, maximum: 12
+
+  default_scope order("created_at desc")
+
 end

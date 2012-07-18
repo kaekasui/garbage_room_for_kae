@@ -33,5 +33,6 @@ class BlogsController < ApplicationController
 
   def show_sidebar
     @recent_blogs = Blog.recent
+    @recent_blog_comments = BlogComment.recent
   end
 end

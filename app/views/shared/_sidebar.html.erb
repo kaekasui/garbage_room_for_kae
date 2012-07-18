@@ -25,7 +25,21 @@
   <h4><%= t("sidebar.recent_blogs") %></h4>
   <ul class="nav nav-list">
     <% @recent_blogs.each do |blog| %>
-    <li><%= link_to blog.title + " (" + l(blog.created_at, format: :very_short) + ")", blog %></li>
+    <li><%= link_to blog.title + " (" + l(blog.created_at, format: :very_short) + ") ", blog %></li>
     <% end %>
   </ul>
+</div>
+
+<div class="well sidebar-nav">
+  <h4><%= t("sidebar.recent_blog_comments") %></h4>
+  <ul class="nav nav-list">
+    <% @recent_blog_comments.each do |comment| %>
+      <% if comment.admin %>
+        <li><%= link_to comment.blog_title + "：*** (" + l(comment.created_at, format: :very_short) + ")", blog_path(comment.blog_id) %></li>
+      <% else %>
+        <li><%= link_to comment.blog_title + "：" + comment.author + " (" + l(comment.created_at, format: :very_short) + ") ", blog_path(comment.blog_id) %></li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
 <% end %>
