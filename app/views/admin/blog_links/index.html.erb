@@ -1,35 +1,48 @@
-<h1>Listing admin_blog_links</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Author</th>
-    <th>Introduction</th>
-    <th>Url</th>
-    <th>Position</th>
-    <th>Draft</th>
-    <th>Deleted at</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @admin_blog_links.each do |admin_blog_link| %>
-  <tr>
-    <td><%= admin_blog_link.title %></td>
-    <td><%= admin_blog_link.author %></td>
-    <td><%= admin_blog_link.introduction %></td>
-    <td><%= admin_blog_link.url %></td>
-    <td><%= admin_blog_link.position %></td>
-    <td><%= admin_blog_link.draft %></td>
-    <td><%= admin_blog_link.deleted_at %></td>
-    <td><%= link_to 'Show', admin_blog_link %></td>
-    <td><%= link_to 'Edit', edit_admin_blog_link_path(admin_blog_link) %></td>
-    <td><%= link_to 'Destroy', admin_blog_link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<%- model_class = BlogLink.new.class -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= model_class.human_attribute_name(:author) %></th>
+      <th><%= model_class.human_attribute_name(:introduction) %></th>
+      <th><%= model_class.human_attribute_name(:url) %></th>
+      <th><%= model_class.human_attribute_name(:position) %></th>
+      <th><%= model_class.human_attribute_name(:draft) %></th>
+      <th><%= model_class.human_attribute_name(:deleted_at) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @blog_links.each do |blog_link| %>
+      <tr>
+        <td><%= link_to blog_link.id, admin_blog_link_path(blog_link) %></td>
+        <td><%= blog_link.title %></td>
+        <td><%= blog_link.author %></td>
+        <td><%= blog_link.introduction %></td>
+        <td><%= blog_link.url %></td>
+        <td><%= blog_link.position %></td>
+        <td><%= blog_link.draft %></td>
+        <td><%= blog_link.deleted_at %></td>
+        <td><%=l blog_link.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_admin_blog_link_path(blog_link), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      admin_blog_link_path(blog_link),
+                      :method => :delete,
+                      :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Blog link', new_admin_blog_link_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_admin_blog_link_path,
+            :class => 'btn btn-primary' %>
