@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @blog_link.title %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @blog_link.author %>
+</p>
+
+<p>
+  <b>Introduction:</b>
+  <%= @blog_link.introduction %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @blog_link.url %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%= @blog_link.position %>
+</p>
+
+<p>
+  <b>Draft:</b>
+  <%= @blog_link.draft %>
+</p>
+
+<p>
+  <b>Deleted at:</b>
+  <%= @blog_link.deleted_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_blog_link_path(@blog_link) %> |
+<%= link_to 'Back', blog_links_path %>
