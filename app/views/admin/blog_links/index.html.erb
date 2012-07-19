@@ -1,0 +1,35 @@
+<h1>Listing admin_blog_links</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Introduction</th>
+    <th>Url</th>
+    <th>Position</th>
+    <th>Draft</th>
+    <th>Deleted at</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @admin_blog_links.each do |admin_blog_link| %>
+  <tr>
+    <td><%= admin_blog_link.title %></td>
+    <td><%= admin_blog_link.author %></td>
+    <td><%= admin_blog_link.introduction %></td>
+    <td><%= admin_blog_link.url %></td>
+    <td><%= admin_blog_link.position %></td>
+    <td><%= admin_blog_link.draft %></td>
+    <td><%= admin_blog_link.deleted_at %></td>
+    <td><%= link_to 'Show', admin_blog_link %></td>
+    <td><%= link_to 'Edit', edit_admin_blog_link_path(admin_blog_link) %></td>
+    <td><%= link_to 'Destroy', admin_blog_link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Blog link', new_admin_blog_link_path %>
