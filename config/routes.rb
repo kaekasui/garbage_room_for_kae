@@ -1,9 +1,5 @@
 Kaenoheya::Application.routes.draw do
 
-  namespace :admin do resources :blog_links end
-
-  resources :blog_links
-
   resources :blogs, only: [:index, :show] do
     resources :blog_comments, except: [:index, :show] do
       post 'confirm' => 'blog_comments#confirm', on: :collection
@@ -14,6 +10,7 @@ Kaenoheya::Application.routes.draw do
   namespace :admin do
     resources :blogs 
     resources :blog_comments
+    resources :blog_links
     resources :updated_informations
   end
 
