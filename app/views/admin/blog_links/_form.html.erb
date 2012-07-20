@@ -1,24 +1,24 @@
 <%= form_for @admin_blog_link, :html => { :class => 'form-horizontal' } do |f| %>
   <div class="control-group">
-    <%= f.label :title, :class => 'control-label' %>
+    <%= f.label :title, :class => 'control-label' %><%= mark_required(@admin_blog_link, :title) %>
     <div class="controls">
       <%= f.text_field :title, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :author, :class => 'control-label' %>
+    <%= f.label :author, :class => 'control-label' %><%= mark_required(@admin_blog_link, :author) %>
     <div class="controls">
       <%= f.text_field :author, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :introduction, :class => 'control-label' %>
+    <%= f.label :introduction, :class => 'control-label' %><%= mark_required(@admin_blog_link, :introduction) %>
     <div class="controls">
       <%= f.text_field :introduction, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :url, :class => 'control-label' %>
+    <%= f.label :url, :class => 'control-label' %><%= mark_required(@admin_blog_link, :url) %>
     <div class="controls">
       <%= f.text_field :url, :class => 'text_field' %>
     </div>
