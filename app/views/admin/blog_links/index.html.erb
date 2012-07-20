@@ -11,9 +11,8 @@
     </tr>
   </thead>
   <tbody>
-    <% @admin_blog_links.each do |admin_blog_link| %>
+    <% @admin_blog_links.each do |blog_link| %>
       <tr>
-        <td><%= link_to blog_link.id, admin_blog_link_path(blog_link) %></td>
         <td><%= blog_link.title %></td>
         <td><%= blog_link.author %></td>
         <td><%= blog_link.introduction %></td>

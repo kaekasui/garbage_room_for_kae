@@ -46,7 +46,7 @@ class Admin::BlogLinksController < ApplicationController
 
     respond_to do |format|
       if @admin_blog_link.save
-        format.html { redirect_to @admin_blog_link, notice: 'Blog link was successfully created.' }
+        format.html { redirect_to admin_blog_links_path, notice: 'Blog link was successfully created.' }
         format.json { render json: @admin_blog_link, status: :created, location: @admin_blog_link }
       else
         format.html { render action: "new" }
