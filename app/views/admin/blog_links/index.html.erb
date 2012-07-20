@@ -1,34 +1,24 @@
-<%- model_class = BlogLink.new.class -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
-</div>
+<%- model_class = Admin::BlogLink.new.class -%>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:author) %></th>
       <th><%= model_class.human_attribute_name(:introduction) %></th>
       <th><%= model_class.human_attribute_name(:url) %></th>
-      <th><%= model_class.human_attribute_name(:position) %></th>
       <th><%= model_class.human_attribute_name(:draft) %></th>
-      <th><%= model_class.human_attribute_name(:deleted_at) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
-    <% @blog_links.each do |blog_link| %>
+    <% @admin_blog_links.each do |admin_blog_link| %>
       <tr>
         <td><%= link_to blog_link.id, admin_blog_link_path(blog_link) %></td>
         <td><%= blog_link.title %></td>
         <td><%= blog_link.author %></td>
         <td><%= blog_link.introduction %></td>
         <td><%= blog_link.url %></td>
-        <td><%= blog_link.position %></td>
         <td><%= blog_link.draft %></td>
-        <td><%= blog_link.deleted_at %></td>
-        <td><%=l blog_link.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_admin_blog_link_path(blog_link), :class => 'btn btn-mini' %>

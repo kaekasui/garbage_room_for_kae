@@ -20,6 +20,12 @@ ja:
         contents1: "内容1"
         contents2: "内容2"
         draft: "未公開"
+      admin/blog_link:
+        title: "タイトル"
+        author: "管理者名"
+        introduction: "紹介文"
+        url: "URL"
+        draft: "下書き"
     errors:
       template:
         header:
