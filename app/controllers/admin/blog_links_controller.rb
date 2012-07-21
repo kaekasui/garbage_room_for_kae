@@ -62,7 +62,7 @@ class Admin::BlogLinksController < ApplicationController
 
     respond_to do |format|
       if @admin_blog_link.update_attributes(params[:admin_blog_link])
-        format.html { redirect_to @admin_blog_link, notice: 'Blog link was successfully updated.' }
+        format.html { redirect_to admin_blog_links_path, notice: 'Blog link was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
