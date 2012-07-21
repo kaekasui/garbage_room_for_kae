@@ -1,6 +1,8 @@
 class Admin::BlogLink < ActiveRecord::Base
   set_table_name :blog_links
 
+  default_scope where("deleted_at is null")
+
   attr_accessible :author, :deleted_at, :draft, :introduction, :position, :title, :url
 
   validates_presence_of :title, :author, :url

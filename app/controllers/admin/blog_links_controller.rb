@@ -75,11 +75,15 @@ class Admin::BlogLinksController < ApplicationController
   # DELETE /admin/blog_links/1.json
   def destroy
     @admin_blog_link = Admin::BlogLink.find(params[:id])
-    @admin_blog_link.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_blog_links_url }
-      format.json { head :no_content }
+      if @admin_blog_link.update_attributes(deleted_at: Time.now())
+        format.html { redirect_to admin_blog_links_path, notice: 'Blog was successfully deleted.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "destroy" }
+        format.json { render json: @admin_blog_link.errors, status: :unprocessable_entity }
+      end
     end
   end
 end
