@@ -42,4 +42,13 @@
     <% end %>
   </ul>
 </div>
+
+<div class="well sidebar-nav">
+  <h4><%= t("sidebar.blog_link") %></h4>
+  <ul class="nav nav-list">
+    <% @blog_links.each do |blog_link| %>
+      <li><%= link_to blog_link.title, blog_link.url, target: "_blank" %></li>
+    <% end %>
+  </ul>
+</div>
 <% end %>
