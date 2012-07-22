@@ -1,0 +1,27 @@
+<h1>Listing admin_versions</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Flag</th>
+    <th>Deleted at</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @admin_versions.each do |admin_version| %>
+  <tr>
+    <td><%= admin_version.name %></td>
+    <td><%= admin_version.flag %></td>
+    <td><%= admin_version.deleted_at %></td>
+    <td><%= link_to 'Show', admin_version %></td>
+    <td><%= link_to 'Edit', edit_admin_version_path(admin_version) %></td>
+    <td><%= link_to 'Destroy', admin_version, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Version', new_admin_version_path %>
