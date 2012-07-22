@@ -1,5 +1,7 @@
 Kaenoheya::Application.routes.draw do
 
+  resources :versions
+
   namespace :admin do resources :versions end
 
   resources :blogs, only: [:index, :show] do
