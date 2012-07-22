@@ -1,27 +1,40 @@
-<h1>Listing admin_versions</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Flag</th>
-    <th>Deleted at</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @admin_versions.each do |admin_version| %>
-  <tr>
-    <td><%= admin_version.name %></td>
-    <td><%= admin_version.flag %></td>
-    <td><%= admin_version.deleted_at %></td>
-    <td><%= link_to 'Show', admin_version %></td>
-    <td><%= link_to 'Edit', edit_admin_version_path(admin_version) %></td>
-    <td><%= link_to 'Destroy', admin_version, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<%- model_class = Version.new.class -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:flag) %></th>
+      <th><%= model_class.human_attribute_name(:deleted_at) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @versions.each do |version| %>
+      <tr>
+        <td><%= link_to version.id, admin_version_path(version) %></td>
+        <td><%= version.name %></td>
+        <td><%= version.flag %></td>
+        <td><%= version.deleted_at %></td>
+        <td><%=l version.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_admin_version_path(version), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      admin_version_path(version),
+                      :method => :delete,
+                      :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Version', new_admin_version_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_admin_version_path,
+            :class => 'btn btn-primary' %>
