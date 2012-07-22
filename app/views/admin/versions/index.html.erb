@@ -14,7 +14,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @versions.each do |version| %>
+    <% @admin_versions.each do |version| %>
       <tr>
         <td><%= link_to version.id, admin_version_path(version) %></td>
         <td><%= version.name %></td>
