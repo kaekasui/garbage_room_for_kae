@@ -1,4 +1,6 @@
 class Admin::VersionsController < ApplicationController
+  before_filter :admin_menu_setting
+
   # GET /admin/versions
   # GET /admin/versions.json
   def index

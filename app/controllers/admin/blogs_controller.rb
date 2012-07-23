@@ -1,5 +1,5 @@
 class Admin::BlogsController < ApplicationController
-  before_filter :admin_menu
+  before_filter :admin_menu_blog
 
   # GET /admin/blogs
   # GET /admin/blogs.json

@@ -1,26 +1,17 @@
 <%- model_class = Version.new.class -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
-</div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:flag) %></th>
-      <th><%= model_class.human_attribute_name(:deleted_at) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @admin_versions.each do |version| %>
       <tr>
-        <td><%= link_to version.id, admin_version_path(version) %></td>
-        <td><%= version.name %></td>
         <td><%= version.flag %></td>
-        <td><%= version.deleted_at %></td>
-        <td><%=l version.created_at %></td>
+        <td><%= version.name %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_admin_version_path(version), :class => 'btn btn-mini' %>
