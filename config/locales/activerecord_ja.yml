@@ -26,6 +26,9 @@ ja:
         introduction: "紹介文"
         url: "URL"
         draft: "下書き"
+      admin/version:
+        flag: "現在のバージョン"
+        name: "バージョン名"
     errors:
       template:
         header:
