@@ -5,7 +5,6 @@ class Admin::VersionsController < ApplicationController
   # GET /admin/versions.json
   def index
     @admin_versions = Admin::Version.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @admin_versions }
@@ -35,9 +34,9 @@ class Admin::VersionsController < ApplicationController
   end
 
   # GET /admin/versions/1/edit
-  def edit
-    @admin_version = Admin::Version.find(params[:id])
-  end
+  #def edit
+  #  @admin_version = Admin::Version.find(params[:id])
+  #end
 
   # POST /admin/versions
   # POST /admin/versions.json
@@ -58,28 +57,32 @@ class Admin::VersionsController < ApplicationController
   # PUT /admin/versions/1
   # PUT /admin/versions/1.json
   def update
-    @admin_version = Admin::Version.find(params[:id])
-
-    respond_to do |format|
-      if @admin_version.update_attributes(params[:admin_version])
+    @version_id = params[:admin_version][:flag]
+    params[:versions].each do |version|
+      @update_version = Admin::Version.find(version[0])
+      @update_version.update_attributes(id: version[0].to_i, name: version[1][:name])
+      flag = version[0] == @version_id ? true : false
+      @update_version.update_attributes(flag: flag)
+    end
+      respond_to do |format|
         format.html { redirect_to admin_versions_path, notice: 'Version was successfully updated.' }
         format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @admin_version.errors, status: :unprocessable_entity }
+        #format.html { redirect_to admin_versions_path, notice: 'Version was not successfully updated.' }
+        #format.json { render json: @admin_version.errors, status: :unprocessable_entity }
       end
-    end
   end
 
-  # DELETE /admin/versions/1
-  # DELETE /admin/versions/1.json
   def destroy
     @admin_version = Admin::Version.find(params[:id])
-    @admin_version.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_versions_url }
-      format.json { head :no_content }
+      if @admin_version.update_attributes(deleted_at: Time.now)
+        format.html { redirect_to admin_versions_path, notice: 'Version was successfully deleted.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "delete" }
+        format.json { render json: @admin_version.errors, status: :unprocessable_entity }
+      end
     end
   end
 end

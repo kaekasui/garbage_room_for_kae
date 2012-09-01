@@ -3,7 +3,6 @@ class VersionsController < ApplicationController
   # GET /versions.json
   def index
     @versions = Version.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @versions }

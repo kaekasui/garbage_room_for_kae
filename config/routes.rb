@@ -2,8 +2,6 @@ Kaenoheya::Application.routes.draw do
 
   resources :versions
 
-  namespace :admin do resources :versions end
-
   resources :blogs, only: [:index, :show] do
     resources :blog_comments, except: [:index, :show] do
       post 'confirm' => 'blog_comments#confirm', on: :collection
@@ -16,6 +14,9 @@ Kaenoheya::Application.routes.draw do
     resources :blog_comments
     resources :blog_links
     resources :updated_informations
+    resources :versions do
+      post 'update' => 'versions#update', on: :collection
+    end
   end
 
   # The priority is based upon order of creation:
