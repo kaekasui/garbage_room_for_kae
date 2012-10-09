@@ -57,7 +57,8 @@ ja:
     mail: "メール一覧"
     access: "アクセス履歴"
     versions: "バージョン一覧"
-
+  blog_link:
+    prefix: "様"
   ##########
   # View
   ##########

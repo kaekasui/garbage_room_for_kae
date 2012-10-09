@@ -47,7 +47,7 @@
   <h4><%= t("sidebar.blog_link") %></h4>
   <ul class="nav nav-list">
     <% @blog_links.each do |blog_link| %>
-      <li><%= link_to blog_link.title, blog_link.url, target: "_blank" %></li>
+      <li><a href=<%= blog_link.url %> target="_blank" rel="tooltip" data-original-title=<%= blog_link.author + I18n.t("blog_link.prefix") + "：" + blog_link.introduction %>><%= blog_link.title %></a></li>
     <% end %>
   </ul>
 </div>
