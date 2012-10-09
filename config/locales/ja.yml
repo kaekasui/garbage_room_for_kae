@@ -13,7 +13,7 @@ ja:
   # Room
   ##########
   room:
-    version: "room-2.0.0" 
+    version: "room-" 
 
   ##########
   # Title
