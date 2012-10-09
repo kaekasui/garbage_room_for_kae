@@ -33,9 +33,11 @@ ja:
 
   profile:
     author: "Name："
-    author_text: "架慧"
+    author_text: "架慧（かえ）"
     twitter: "Twitter："
-    twitter_text: "@kae_kasui"
+    at: "@"
+    twitter_text: "kae_kasui"
+    twitter_url: "https://twitter.com/"
     favorite: "Favorite："
     favorite_text: "甘いもの/Ruby on Rails/漫画/みかん/ゲーム/卵/黒/電気製品/トイプードル/バームクーヘン/アニメ/etc..."
   menu:
