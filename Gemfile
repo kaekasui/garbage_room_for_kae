@@ -39,7 +39,7 @@ gem 'jquery-rails'
 gem 'heroku'
 
 gem 'taps'
-gem 'sqlite3'
+#gem 'sqlite3'
 
 gem "twitter-bootstrap-rails"
 
