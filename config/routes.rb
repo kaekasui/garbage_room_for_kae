@@ -7,12 +7,14 @@ Kaenoheya::Application.routes.draw do
       post 'confirm' => 'blog_comments#confirm', on: :collection
     end
   end
+  resources :mail_forms
   resources :updated_informations, only: [:index, :show]
 
   namespace :admin do
     resources :blogs 
     resources :blog_comments
     resources :blog_links
+    resources :mail_forms
     resources :updated_informations
     resources :versions do
       post 'update' => 'versions#update', on: :collection
