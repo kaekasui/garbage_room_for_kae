@@ -1,5 +1,33 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = @mail_form.class -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @mail_form.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:mail) %>:</strong></dt>
+  <dd><%= @mail_form.mail %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:content) %>:</strong></dt>
+  <dd><%= @mail_form.content %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:ip) %>:</strong></dt>
+  <dd><%= @mail_form.ip %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:host) %>:</strong></dt>
+  <dd><%= @mail_form.host %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
+  <dd><%= @mail_form.user_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:check) %>:</strong></dt>
+  <dd><%= @mail_form.check %></dd>
+</dl>
 
-<%= link_to 'Edit', edit_admin_mail_form_path(@admin_mail_form) %> |
-<%= link_to 'Back', admin_mail_forms_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              admin_mail_forms_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_admin_mail_form_path(@mail_form), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              admin_mail_form_path(@mail_form),
+              :method => 'delete',
+              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+              :class => 'btn btn-danger' %>
+</div>

@@ -1,21 +1,48 @@
-<h1>Listing admin_mail_forms</h1>
-
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @admin_mail_forms.each do |admin_mail_form| %>
-  <tr>
-    <td><%= link_to 'Show', admin_mail_form %></td>
-    <td><%= link_to 'Edit', edit_admin_mail_form_path(admin_mail_form) %></td>
-    <td><%= link_to 'Destroy', admin_mail_form, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<%- model_class = MailForm.new.class -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:mail) %></th>
+      <th><%= model_class.human_attribute_name(:content) %></th>
+      <th><%= model_class.human_attribute_name(:ip) %></th>
+      <th><%= model_class.human_attribute_name(:host) %></th>
+      <th><%= model_class.human_attribute_name(:user_id) %></th>
+      <th><%= model_class.human_attribute_name(:check) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @mail_forms.each do |mail_form| %>
+      <tr>
+        <td><%= link_to mail_form.id, admin_mail_form_path(mail_form) %></td>
+        <td><%= mail_form.name %></td>
+        <td><%= mail_form.mail %></td>
+        <td><%= mail_form.content %></td>
+        <td><%= mail_form.ip %></td>
+        <td><%= mail_form.host %></td>
+        <td><%= mail_form.user_id %></td>
+        <td><%= mail_form.check %></td>
+        <td><%=l mail_form.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_admin_mail_form_path(mail_form), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      admin_mail_form_path(mail_form),
+                      :method => :delete,
+                      :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Mail form', new_admin_mail_form_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_admin_mail_form_path,
+            :class => 'btn btn-primary' %>
