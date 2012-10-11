@@ -57,7 +57,7 @@ ja:
     new_blog: "ブログ作成"
     comments: "コメント一覧"
     links: "リンク一覧"
-    mail: "メール一覧"
+    mails: "メール一覧"
     access: "アクセス履歴"
     versions: "バージョン一覧"
   blog_link:

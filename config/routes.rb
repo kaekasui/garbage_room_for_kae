@@ -1,9 +1,5 @@
 Kaenoheya::Application.routes.draw do
 
-  namespace :admin do resources :mail_forms end
-
-  resources :versions
-
   resources :blogs, only: [:index, :show] do
     resources :blog_comments, except: [:index, :show] do
       post 'confirm' => 'blog_comments#confirm', on: :collection
@@ -11,6 +7,7 @@ Kaenoheya::Application.routes.draw do
   end
   resources :mail_forms
   resources :updated_informations, only: [:index, :show]
+  resources :versions
 
   namespace :admin do
     resources :blogs 

@@ -1,3 +1,3 @@
 class Admin::MailForm < ActiveRecord::Base
-  # attr_accessible :title, :body
+  set_table_name :mail_forms
 end
