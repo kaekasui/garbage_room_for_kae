@@ -1,4 +1,6 @@
 class Admin::MailFormsController < ApplicationController
+  before_filter :admin_menu_blog
+
   # GET /admin/mail_forms
   # GET /admin/mail_forms.json
   def index
