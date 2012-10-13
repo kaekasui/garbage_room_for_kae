@@ -16,7 +16,6 @@
   <tbody>
     <% @admin_mail_forms.each do |mail_form| %>
       <tr>
-        <td><%= link_to mail_form.id, admin_mail_form_path(mail_form) %></td>
         <td><%= mail_form.name %></td>
         <td><%= mail_form.mail %></td>
         <td><%= mail_form.content %></td>

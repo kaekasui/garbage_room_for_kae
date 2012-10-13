@@ -1,5 +1,10 @@
 <a name="mail_form"></a>
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <div class="alert alert-success">
+    <button class="close" data-dismiss="alert">×</button>
+    <%= notice %>
+  </div>
+<% end %>
 
 <%= form_for :mail_form, html: {class: "form-vertical"}, url: mail_forms_path do |f| %>
 
