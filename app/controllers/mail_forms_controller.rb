@@ -3,7 +3,7 @@ class MailFormsController < ApplicationController
   # POST /mail_forms
   # POST /mail_forms.json
   def create
-    @mail_form = Admin::MailForm.new(params[:mail_form])
+    @mail_form = MailForm.new(params[:mail_form])
 
     respond_to do |format|
       if @mail_form.save

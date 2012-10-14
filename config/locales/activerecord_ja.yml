@@ -1,11 +1,6 @@
 ja:
   activerecord:
     attributes:
-      updated_information:
-        display_at: "更新日時"
-        title: "タイトル"
-        news: "更新内容"
-        comment: "コメント"
       blog_comment:
         title: "タイトル"
         author: "名前"
@@ -14,6 +9,11 @@ ja:
         content: "内容"
         password: "パスワード"
         admin: "管理者のみ閲覧"
+      updated_information:
+        display_at: "更新日時"
+        title: "タイトル"
+        news: "更新内容"
+        comment: "コメント"
       admin/blog:
         created_at: "作成日時"
         title: "タイトル"
