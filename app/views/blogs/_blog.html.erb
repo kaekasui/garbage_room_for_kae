@@ -5,5 +5,5 @@
 </tr>
 
 <tr>
-  <td colspan="2" class="text_right">Comments(<%= blog.count_comments %>)</td>
+  <td colspan="2" class="text_right"><%= link_to "Comments(" + blog.count_comments.to_s + ")", blog_path(id: blog.id, anchor: "blog_comments") %></td>
 </tr>
