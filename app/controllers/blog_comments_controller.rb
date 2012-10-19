@@ -72,13 +72,4 @@ class BlogCommentsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
-  def confirm
-    @blog_comment = BlogComment.new(params[:blog_comment])
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @blog_comment }
-    end
-  end
 end

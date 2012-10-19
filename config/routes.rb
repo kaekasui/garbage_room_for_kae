@@ -2,7 +2,7 @@ Kaenoheya::Application.routes.draw do
 
   resources :blogs, only: [:index, :show] do
     resources :blog_comments, except: [:index, :show] do
-      post 'confirm' => 'blog_comments#confirm', on: :collection
+      #post 'confirm' => 'blog_comments#confirm', on: :collection
     end
   end
   resources :mail_forms
