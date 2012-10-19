@@ -1,23 +1,14 @@
-<div id="blog_comments">
+<div class="blog_comment">
 <% if blog_comment.admin %>
-  <tr>
-    <td><%= t(".admin") %></td>
-    <td class="text_right"><%= l blog_comment.created_at %></td>
-  </tr>
+<%= t(".admin") %>
+    <span class="text_right"><%= l blog_comment.created_at %></span>
 <% else %>
-  <tr>
-    <td><b><%= blog_comment.title %></b></td>
-    <td class="text_right"><%= l blog_comment.created_at %></td>
-  </tr> 
-  <tr>
-    <td colspan="2"><%= to_br(blog_comment.content).html_safe %></td>
-  </tr>
-  <tr>
-    <td colspan="2" class="text_right"><%= blog_comment.author %> -
+    <span class="comment_title"><b><%= blog_comment.title %></b></span>
+    <span class="text_right comment_created_at"><%= l blog_comment.created_at %></span>
+    <span colspan="2" class="comment_content"><%= to_br(blog_comment.content).html_safe %></span>
+    <span colspan="2" class="text_right comment_author"><%= blog_comment.author %> -
       | <% if blog_comment.url.blank? then %>URL<% else %><%= link_to 'URL', blog_comment.url, :target => '_blank' %><% end %>
       | <% if blog_comment.mail.blank? then %>Mail<% else %><%= mail_to blog_comment.mail, 'Mail' %><% end %>
-    </td>
-  </tr>
-  <tr>
+    </span>
 <% end %>
 </div>
