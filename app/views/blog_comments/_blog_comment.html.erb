@@ -1,14 +1,28 @@
 <div class="blog_comment">
+  <table class="table">
 <% if blog_comment.admin %>
-<%= t(".admin") %>
-    <span class="text_right"><%= l blog_comment.created_at %></span>
+  <tr>
+    <td><%= t(".admin") %></td>
+    <td class="text_right"><span class="comment_created_at"><%= l blog_comment.created_at %></span></td>
+  </tr>
 <% else %>
-    <span class="comment_title"><b><%= blog_comment.title %></b></span>
-    <span class="text_right comment_created_at"><%= l blog_comment.created_at %></span>
-    <span colspan="2" class="comment_content"><%= to_br(blog_comment.content).html_safe %></span>
-    <span colspan="2" class="text_right comment_author"><%= blog_comment.author %> -
-      | <% if blog_comment.url.blank? then %>URL<% else %><%= link_to 'URL', blog_comment.url, :target => '_blank' %><% end %>
-      | <% if blog_comment.mail.blank? then %>Mail<% else %><%= mail_to blog_comment.mail, 'Mail' %><% end %>
-    </span>
+  <% unless blog_comment.title.nil? %>
+  <tr>
+    <td colspan="2"><span class="comment_title"><b><%= blog_comment.title %></b></span></td>
+  </tr>
+  <% end %>
+  <tr>
+    <td width="80%"><span class="comment_author"><%= blog_comment.author %></span></td>
+    <td class="text_right"><span class="comment_created_at"><%= l blog_comment.created_at %></span></td>
+  </tr>
+  <tr>
+    <td colspan="2"><span class="comment_content"><%= to_br(blog_comment.content).html_safe %></span></td>
+  </tr>
+  <tr>
+    <td class="text_right" colspan="2">
+      <span class="comment_url"><%= link_to_if(!blog_comment.url.blank?, I18n.t("blog_comments.blog_comment.url"), blog_comment.url, target: "_blank") %></span>
+    </td>
+  </tr>
 <% end %>
+</table>
 </div>
