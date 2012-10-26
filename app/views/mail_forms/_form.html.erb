@@ -6,24 +6,25 @@
   </div>
 <% end %>
 
+<% @mail_form = MailForm.new %>
 <%= form_for :mail_form, html: {class: "form-vertical"}, url: mail_forms_path do |f| %>
 
   <div class="control-group">
-  <%= f.label :name, class: "control-label" %>
+  <%= f.label :name, class: "control-label" %><%= mark_required_vertical(@mail_form, :name) %>
     <div class="controls">
   <%= f.text_field :name %>
     </div>
   </div>
 
   <div class="control-group">
-  <%= f.label :mail, class: "control-label" %>
+  <%= f.label :mail, class: "control-label" %><%= mark_required_vertical(@mail_form, :mail) %>
     <div class="controls">
   <%= f.text_field :mail %>
     </div>
   </div>
 
   <div class="control-group">
-  <%= f.label :content, class: "control-label" %>
+  <%= f.label :content, class: "control-label" %><%= mark_required_vertical(@mail_form, :content) %>
     <div class="controls">
   <%= f.text_area :content, class: "span3", rows: "4" %>
     </div>

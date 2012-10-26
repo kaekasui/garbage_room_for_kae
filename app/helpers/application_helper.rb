@@ -11,4 +11,9 @@ module ApplicationHelper
     mark if object.class.validators_on(attribute).map(&:class).include? ActiveModel::Validations::PresenceValidator
   end
 
+  # 入力必須の項目であった場合に「*」を表示する（form-verticalの場合のみ）
+  def mark_required_vertical(object, attribute)
+    mark = raw "<font color='red'>*</font>"
+    mark if object.class.validators_on(attribute).map(&:class).include? ActiveModel::Validations::PresenceValidator
+  end
 end
