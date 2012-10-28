@@ -9,6 +9,10 @@ ja:
         content: "内容"
         password: "パスワード"
         admin: "管理者のみ閲覧"
+      mail_form:
+        name: "名前"
+        mail: "メールアドレス"
+        content: "内容"
       updated_information:
         display_at: "更新日時"
         title: "タイトル"
