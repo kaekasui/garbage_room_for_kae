@@ -96,3 +96,12 @@ ja:
     create_mail_form: "メールが送信されました。"
     cannot_create_mail_form: "メールの送信に失敗しました。"
 
+  ##########
+  # Submit
+  ##########
+  helpers:
+    submit:
+      blog_comment:
+        create: "投稿"
+      mail_form:
+        submit: "送信"
