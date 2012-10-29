@@ -1,5 +1,5 @@
 <tr>
-  <th><%= link_to blog.title, blog %></th>
+  <th><%= image_tag @icon_image, class: "icon" %><%= link_to blog.title, blog %></th>
   <th style="font-weight:normal" class="text_right"><%= l blog.created_at %></th>
 </tr>
 <tr>

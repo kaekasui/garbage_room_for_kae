@@ -1,5 +1,5 @@
 <div class="well sidebar-nav">
-  <h4><%= t("sidebar.profile") %></h4>
+  <h4><%= image_tag @icon_image, class: "icon" %><%= t("sidebar.profile") %></h4>
   <ul class="nav nav-list">
     <li><%= image_tag "kae.jpg" %></li>
     <li><%= t("profile.author") %><%= t("profile.author_text") %></li>
@@ -11,7 +11,7 @@
 
 <% if @menu_name == t("menu.top") %>
 <div class="well sidebar-nav">
-  <h4><%= t("sidebar.menu") %></h4>
+  <h4><%= image_tag @icon_image, class: "icon" %><%= t("sidebar.menu") %></h4>
   <ul class="nav nav-list">
     <li><%= link_to t("menu.top"), root_path %></li>
     <li><%= t("menu.top_text") %></li>
@@ -23,7 +23,7 @@
  
 <% if @menu_name == t("menu.blog") %>
 <div class="well sidebar-nav">
-  <h4><%= t("sidebar.recent_blogs") %></h4>
+  <h4><%= image_tag @icon_image, class: "icon" %><%= t("sidebar.recent_blogs") %></h4>
   <ul class="nav nav-list">
     <% @recent_blogs.each do |blog| %>
     <li><%= link_to blog.title + " (" + l(blog.created_at, format: :very_short) + ") ", blog %></li>
@@ -32,7 +32,7 @@
 </div>
 
 <div class="well sidebar-nav">
-  <h4><%= t("sidebar.recent_blog_comments") %></h4>
+  <h4><%= image_tag @icon_image, class: "icon" %><%= t("sidebar.recent_blog_comments") %></h4>
   <ul class="nav nav-list">
     <% @recent_blog_comments.each do |comment| %>
       <% if comment.admin %>
@@ -45,7 +45,7 @@
 </div>
 
 <div class="well sidebar-nav">
-  <h4><%= t("sidebar.blog_link") %></h4>
+  <h4><%= image_tag @icon_image, class: "icon" %><%= t("sidebar.blog_link") %></h4>
   <ul class="nav nav-list">
     <% @blog_links.each do |blog_link| %>
       <li><a href=<%= blog_link.url %> target="_blank" rel="tooltip" data-original-title=<%= blog_link.author + I18n.t("blog_link.prefix") + "：" + blog_link.introduction %>><%= blog_link.title %></a></li>
@@ -54,7 +54,7 @@
 </div>
 
 <div class="well sidebar-nav">
-  <h4><%= t("sidebar.mail_form") %></h4>
+  <h4><%= image_tag @icon_image, class: "icon" %><%= t("sidebar.mail_form") %></h4>
   <%= render partial: "mail_forms/form" %>
 </div>
 <% end %>
