@@ -4,7 +4,7 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all
+    @blogs = Blog.scoped.page(params[:page]).per(5)
 
     respond_to do |format|
       format.html # index.html.erb
