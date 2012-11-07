@@ -64,6 +64,14 @@ ja:
   ##########
   # View
   ##########
+  views:
+    pagination:
+      first: "<<"
+      previous: "<"
+      next: ">"
+      last: ">>"
+      truncate: "..."
+      
   top:
     index:
       introduction: "サイトがさらにリニューアルオープンしました！ヾ(〃´∇｀)ﾉ\n\n2011年3月11日の地震以来、節電対策と致しましてサーバーをしばらく停止させて頂いておりましたが、今回heroku上で再開をさせて頂くこととなりました。長い間お待たせし、申し訳ありませんでした。m(__*)m\n\n 
@@ -105,3 +113,4 @@ ja:
         create: "投稿"
       mail_form:
         submit: "送信"
+
