@@ -10,6 +10,7 @@ class Admin::User < ActiveRecord::Base
     unless auth["info"].blank?
       user[:name] = auth["info"]["name"]
       user[:screen_name] = auth["info"]["nickname"]
+      user[:admin] = true if user[:screen_name] == 'kae_kasui'
       user[:image] = auth["info"]["image"]
     end
 
