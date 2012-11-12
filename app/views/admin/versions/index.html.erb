@@ -1,4 +1,5 @@
 <%- model_class = Admin::Version.new.class -%>
+<% unless @admin_versions.nil? %>
 <%= form_for @admin_versions, url: {action: :update}, html: {method: :post} do |f| %>
 <table class="table table-striped">
   <thead>
@@ -27,6 +28,7 @@
   </tbody>
 </table>
 <%= f.submit class: "btn" %>
+<% end %>
 <% end %>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
