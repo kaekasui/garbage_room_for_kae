@@ -5,7 +5,7 @@ Kaenoheya::Application.routes.draw do
       #post 'confirm' => 'blog_comments#confirm', on: :collection
     end
   end
-  resources :mail_forms
+  resources :mail_forms, extract: [:index]
   resources :updated_informations, only: [:index, :show]
   resources :versions
 
