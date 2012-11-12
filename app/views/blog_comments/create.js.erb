@@ -1,8 +1,1 @@
-var comment = $(".blog_comment:first-child").clone();
-
-comment.find(".comment_created_at").text("<%= l @blog_comment.created_at %>");
-comment.find(".comment_title").text("<%= @blog_comment.title %>");
-comment.find(".comment_content").text("<%= @blog_comment.content %>");
-comment.find(".comment_author").text("<%= @blog_comment.author %>");
-
-$("#blog_comments").prepend(comment);
+$("#blog_comments").prepend("<%= j render partial: 'blog_comment', locals: {blog_comment: @blog_comment} %>")
