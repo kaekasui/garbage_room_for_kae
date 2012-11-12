@@ -1,5 +1,5 @@
 <%- model_class = Admin::Version.new.class -%>
-<% unless @admin_versions.nil? %>
+<% unless @admin_versions.blank? %>
 <%= form_for @admin_versions, url: {action: :update}, html: {method: :post} do |f| %>
 <table class="table table-striped">
   <thead>
