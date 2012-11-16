@@ -1,21 +1,11 @@
 <%- model_class = BlogComment.new.class -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
-</div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:blog_id) %></th>
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:author) %></th>
       <th><%= model_class.human_attribute_name(:content) %></th>
-      <th><%= model_class.human_attribute_name(:url) %></th>
-      <th><%= model_class.human_attribute_name(:mail) %></th>
-      <th><%= model_class.human_attribute_name(:ip) %></th>
-      <th><%= model_class.human_attribute_name(:host) %></th>
-      <th><%= model_class.human_attribute_name(:password) %></th>
-      <th><%= model_class.human_attribute_name(:salt) %></th>
       <th><%= model_class.human_attribute_name(:admin) %></th>
       <th><%= model_class.human_attribute_name(:mixi) %></th>
       <th><%= model_class.human_attribute_name(:draft) %></th>
@@ -24,19 +14,12 @@
     </tr>
   </thead>
   <tbody>
-    <% @blog_comments.each do |blog_comment| %>
+    <% @admin_blog_comments.each do |blog_comment| %>
       <tr>
-        <td><%= link_to blog_comment.id, admin_blog_comment_path(blog_comment) %></td>
         <td><%= blog_comment.blog_id %></td>
         <td><%= blog_comment.title %></td>
         <td><%= blog_comment.author %></td>
-        <td><%= blog_comment.content %></td>
-        <td><%= blog_comment.url %></td>
-        <td><%= blog_comment.mail %></td>
-        <td><%= blog_comment.ip %></td>
-        <td><%= blog_comment.host %></td>
-        <td><%= blog_comment.password %></td>
-        <td><%= blog_comment.salt %></td>
+        <td><%= link_to blog_comment.content, admin_blog_comment_path(blog_comment) %></td>
         <td><%= blog_comment.admin %></td>
         <td><%= blog_comment.mixi %></td>
         <td><%= blog_comment.draft %></td>

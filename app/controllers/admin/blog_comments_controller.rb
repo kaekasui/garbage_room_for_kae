@@ -1,4 +1,6 @@
 class Admin::BlogCommentsController < ApplicationController
+  before_filter :admin_menu_blog
+
   # GET /admin/blog_comments
   # GET /admin/blog_comments.json
   def index
