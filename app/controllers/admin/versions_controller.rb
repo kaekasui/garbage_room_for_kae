@@ -33,11 +33,6 @@ class Admin::VersionsController < ApplicationController
     end
   end
 
-  # GET /admin/versions/1/edit
-  #def edit
-  #  @admin_version = Admin::Version.find(params[:id])
-  #end
-
   # POST /admin/versions
   # POST /admin/versions.json
   def create
@@ -57,19 +52,26 @@ class Admin::VersionsController < ApplicationController
   # PUT /admin/versions/1
   # PUT /admin/versions/1.json
   def update
-    @version_id = params[:admin_version][:flag]
-    params[:versions].each do |version|
-      @update_version = Admin::Version.find(version[0])
-      @update_version.update_attributes(id: version[0].to_i, name: version[1][:name])
-      flag = version[0] == @version_id ? true : false
-      @update_version.update_attributes(flag: flag)
-    end
+    if params[:commit] == I18n.t("helpers.submit.admin_version.create")
+      respond_to do |format|
+        #format.html { render "admin/versions#create"}
+        format.html { render @admin_version }
+      end
+    else
+      @version_id = params[:admin_version][:flag]
+      params[:versions].each do |version|
+        @update_version = Admin::Version.find(version[0])
+        @update_version.update_attributes(id: version[0].to_i, name: version[1][:name])
+        flag = version[0] == @version_id ? true : false
+        @update_version.update_attributes(flag: flag)
+      end
       respond_to do |format|
         format.html { redirect_to admin_versions_path, notice: 'Version was successfully updated.' }
         format.json { head :no_content }
         #format.html { redirect_to admin_versions_path, notice: 'Version was not successfully updated.' }
         #format.json { render json: @admin_version.errors, status: :unprocessable_entity }
       end
+    end
   end
 
   def destroy
