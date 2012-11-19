@@ -33,6 +33,7 @@ class Admin::VersionsController < ApplicationController
     end
   end
 
+=begin
   # POST /admin/versions
   # POST /admin/versions.json
   def create
@@ -48,15 +49,25 @@ class Admin::VersionsController < ApplicationController
       end
     end
   end
+=end
 
   # PUT /admin/versions/1
   # PUT /admin/versions/1.json
   def update
+    # 暫定対応
     if params[:commit] == I18n.t("helpers.submit.admin_version.create")
+      @admin_version = Admin::Version.new(params[:admin_version])
+
       respond_to do |format|
-        #format.html { render "admin/versions#create"}
-        format.html { render @admin_version }
+        if @admin_version.save
+          format.html { redirect_to admin_versions_path, notice: 'Version was successfully created.' }
+          format.json { render json: @admin_version, status: :created, location: @admin_version }
+        else
+          format.html { render action: "new" }
+          format.json { render json: @admin_version.errors, status: :unprocessable_entity }
+        end
       end
+ 
     else
       @version_id = params[:admin_version][:flag]
       params[:versions].each do |version|
