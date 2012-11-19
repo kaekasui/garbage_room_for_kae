@@ -113,6 +113,8 @@ ja:
         create: "投稿"
       mail_form:
         submit: "送信"
+      admin_blog:
+        create: "保存"
       admin_version:
           create: "作成"
 
