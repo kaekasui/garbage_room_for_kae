@@ -54,7 +54,7 @@ ja:
   admin_menu:
     blogs: "ブログ一覧"
     new_blog: "ブログ作成"
-    comments: "コメント一覧"
+    blog_comments: "コメント一覧"
     links: "リンク一覧"
     mails: "メール一覧"
     access: "アクセス履歴"
