@@ -18,6 +18,14 @@ ja:
         title: "タイトル"
         news: "更新内容"
         comment: "コメント"
+      admin/blog_comment:
+        blog_id: "ブログ"
+        title: "タイトル"
+        author: "名前"
+        content: "内容"
+        admin: "管理者のみ"
+        draft: "下書き"
+        created_at: "コメント投稿日時"
       admin/blog:
         created_at: "作成日時"
         title: "タイトル"

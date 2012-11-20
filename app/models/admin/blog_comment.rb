@@ -13,4 +13,7 @@ class Admin::BlogComment < ActiveRecord::Base
 
   default_scope order("created_at desc")
 
+  def blog_title
+    Admin::Blog.find(self.blog_id).title if Admin::Blog.find(self.blog_id)
+  end
 end

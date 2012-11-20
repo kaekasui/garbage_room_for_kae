@@ -1,29 +1,29 @@
-<%- model_class = BlogComment.new.class -%>
+<%- model_class = Admin::BlogComment.new.class -%>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:blog_id) %></th>
-      <th><%= model_class.human_attribute_name(:title) %></th>
-      <th><%= model_class.human_attribute_name(:author) %></th>
+      <th><%= model_class.human_attribute_name(:blog_id) %><br />
+      <%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name(:author) %><br />
+      <%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:content) %></th>
       <th><%= model_class.human_attribute_name(:admin) %></th>
       <th><%= model_class.human_attribute_name(:mixi) %></th>
       <th><%= model_class.human_attribute_name(:draft) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @admin_blog_comments.each do |blog_comment| %>
       <tr>
-        <td><%= blog_comment.blog_id %></td>
-        <td><%= blog_comment.title %></td>
-        <td><%= blog_comment.author %></td>
+        <td><%= blog_comment.blog_title %><br />
+        <%=l blog_comment.created_at %></td>
+        <td><%= blog_comment.author %><br />
+        <%= blog_comment.title %></td>
         <td><%= link_to blog_comment.content, admin_blog_comment_path(blog_comment) %></td>
         <td><%= blog_comment.admin %></td>
         <td><%= blog_comment.mixi %></td>
         <td><%= blog_comment.draft %></td>
-        <td><%=l blog_comment.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_admin_blog_comment_path(blog_comment), :class => 'btn btn-mini' %>
