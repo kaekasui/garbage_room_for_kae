@@ -1,10 +1,12 @@
 <%= form_for @admin_blog_comment, :html => { :class => 'form-horizontal' } do |f| %>
+
   <div class="control-group">
-    <%= f.label :blog_id, :class => 'control-label' %>
+    <%= f.label :created_at, class: 'control-label' %><%= mark_required(@admin_blog_comment, :created_at) %>
     <div class="controls">
-      <%= f.number_field :blog_id, :class => 'number_field' %>
+      <%= f.datetime_select :created_at, datetime_separator: "　", include_seconds: true, use_month_numbers: true, class: "date_time" %>
     </div>
   </div>
+
   <div class="control-group">
     <%= f.label :title, :class => 'control-label' %>
     <div class="controls">
@@ -45,18 +47,6 @@
     <%= f.label :host, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :host, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :password, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :password, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :salt, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :salt, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">

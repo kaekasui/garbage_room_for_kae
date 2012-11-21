@@ -62,7 +62,8 @@ class Admin::BlogCommentsController < ApplicationController
 
     respond_to do |format|
       if @admin_blog_comment.update_attributes(params[:admin_blog_comment])
-        format.html { redirect_to @admin_blog_comment, notice: 'Blog comment was successfully updated.' }
+        #format.html { redirect_to @admin_blog_comment, notice: 'Blog comment was successfully updated.' }
+        format.html { redirect_to admin_blog_comments_path, notice: 'Blog comment was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

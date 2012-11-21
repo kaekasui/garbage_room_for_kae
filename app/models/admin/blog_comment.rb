@@ -3,7 +3,7 @@ class Admin::BlogComment < ActiveRecord::Base
 
   belongs_to :blog
 
-  attr_accessible :admin, :author, :blog_id, :content, :draft, :host, :ip, :mail, :mixi, :password, :salt, :title, :url
+  attr_accessible :created_at, :admin, :author, :blog_id, :content, :draft, :host, :ip, :mail, :mixi, :password, :salt, :title, :url
 
   validates_presence_of :author, :content
   validates_length_of :title, :author, maximum: AVAILABLE_STRING_LENGTH, size: AVAILABLE_STRING_LENGTH
