@@ -18,6 +18,12 @@ ja:
         title: "タイトル"
         news: "更新内容"
         comment: "コメント"
+      admin/blog:
+        created_at: "作成日時"
+        title: "タイトル"
+        contents1: "内容1"
+        contents2: "内容2"
+        draft: "未公開"
       admin/blog_comment:
         blog_id: "ブログ"
         title: "タイトル"
@@ -26,12 +32,6 @@ ja:
         admin: "管理者のみ"
         draft: "下書き"
         created_at: "コメント投稿日時"
-      admin/blog:
-        created_at: "作成日時"
-        title: "タイトル"
-        contents1: "内容1"
-        contents2: "内容2"
-        draft: "未公開"
       admin/blog_link:
         title: "タイトル"
         author: "管理者名"
