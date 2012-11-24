@@ -103,6 +103,9 @@ ja:
   flash:
     create_mail_form: "メールが送信されました。"
     cannot_create_mail_form: "メールの送信に失敗しました。"
+    create_admin_blog: "ブログを作成しました。"
+    update_admin_blog: "ブログを更新しました。"
+    destroy_admin_blog: "ブログを削除しました。"
 
   ##########
   # Submit

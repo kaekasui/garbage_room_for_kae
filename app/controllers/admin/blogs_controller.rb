@@ -46,7 +46,7 @@ class Admin::BlogsController < ApplicationController
 
     respond_to do |format|
       if @admin_blog.save
-        format.html { redirect_to admin_blogs_path, notice: 'Blog was successfully created.' }
+        format.html { redirect_to admin_blogs_path, notice: I18n.t("flash.create_admin_blog") }
         format.json { render json: @admin_blog, status: :created, location: @admin_blog }
       else
         format.html { render action: "new" }
@@ -62,7 +62,7 @@ class Admin::BlogsController < ApplicationController
 
     respond_to do |format|
       if @admin_blog.update_attributes(params[:admin_blog])
-        format.html { redirect_to admin_blogs_path, notice: 'Blog was successfully updated.' }
+        format.html { redirect_to admin_blogs_path, notice: I18n.t("flash.update_admin_blog") }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -78,7 +78,7 @@ class Admin::BlogsController < ApplicationController
 
     respond_to do |format|
       if @admin_blog.update_attributes(deleted_at: Time.now())
-        format.html { redirect_to admin_blogs_path, notice: 'Blog was successfully deleted.' }
+        format.html { redirect_to admin_blogs_path, notice: I18n.t("flash.destroy_admin_blog") }
         format.json { head :no_content }
       else
         format.html { render action: "destroy" }
