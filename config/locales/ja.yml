@@ -119,5 +119,8 @@ ja:
       admin_blog:
         create: "保存"
       admin_version:
-          create: "作成"
-
+        create: "作成"
+        update: "更新"
+    links:
+      new: "作成"
+      destroy: "削除"
