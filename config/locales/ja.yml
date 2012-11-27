@@ -118,9 +118,17 @@ ja:
         submit: "送信"
       admin_blog:
         create: "保存"
+        update: "編集"
+      admin_blog_comment:
+        update: "編集"
+      admin_blog_link:
+        create: "追加"
+        update: "編集"
       admin_version:
         create: "作成"
         update: "更新"
     links:
       new: "作成"
+      edit: "編集"
       destroy: "削除"
+      cancel: "キャンセル"
