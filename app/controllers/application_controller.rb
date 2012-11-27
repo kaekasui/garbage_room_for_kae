@@ -14,6 +14,13 @@ class ApplicationController < ActionController::Base
     @admin_menu_setting = true
   end
 
+  def authorized_current_user
+    redirect_to root_path if current_user.nil?
+  end
+
+  def authorized_admin_user
+    redirect_to root_path unless current_user.admin?
+  end
 
   private
 

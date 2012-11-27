@@ -1,4 +1,7 @@
 class Admin::UpdatedInformationsController < ApplicationController
+  before_filter :authorized_current_user
+  before_filter :authorized_admin_user
+ 
   # GET /admin/updated_informations
   # GET /admin/updated_informations.json
   def index

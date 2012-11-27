@@ -17,4 +17,8 @@ class Admin::User < ActiveRecord::Base
     user.save
     return user
   end
+
+  def self.admin?
+    self.admin
+  end
 end

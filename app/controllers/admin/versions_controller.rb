@@ -1,4 +1,6 @@
 class Admin::VersionsController < ApplicationController
+  before_filter :authorized_current_user
+  before_filter :authorized_admin_user
   before_filter :admin_menu_setting
 
   # GET /admin/versions
