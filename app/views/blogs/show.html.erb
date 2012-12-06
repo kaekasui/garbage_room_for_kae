@@ -1,7 +1,7 @@
 <table class="table">
   <%= render partial: "exordium", locals: {blog: @blog} %>
   <tr>
-    <td colspan="2"><%= to_br(@blog.contents2).html_safe %></td>
+    <td colspan="2"><%= to_img(to_br(@blog.contents2)).html_safe %></td>
   </tr>
   <tr>
     <td colspan="2" class="text_right"><%= link_to "Comments(" + @blog.count_comments.to_s + ")", blog_path(anchor: "blog_comments") %></td>

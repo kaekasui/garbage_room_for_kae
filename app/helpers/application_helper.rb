@@ -5,6 +5,10 @@ module ApplicationHelper
     text.gsub(/\r\n|\r|\n/, "<br />")
   end
 
+  def to_img(text)
+    text.gsub(URI.regexp(['http', 'https']), "<img src='\\&'>")
+  end
+
   # 入力必須の項目であった場合に「*」を表示する
   def mark_required(object, attribute)
     mark = raw "<span class='require_mark'>*</span>"
