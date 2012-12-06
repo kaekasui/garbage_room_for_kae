@@ -27,12 +27,14 @@
   <div class="control-group">
     <%= f.label :contents1, :class => 'control-label' %><%= mark_required(@admin_blog, :contents1) %>
     <div class="controls">
+      <%= render partial: 'choose_image', locals: {id: 'db-chooser1'} %>
       <%= f.text_area :contents1, :class => 'text_area span5', rows: "5" %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :contents2, :class => 'control-label' %><%= mark_required(@admin_blog, :contents2) %>
     <div class="controls">
+      <%= render partial: 'choose_image', locals: {id: 'db-chooser2'} %>
       <%= f.text_area :contents2, :class => 'text_area span5', rows: '10' %>
     </div>
   </div>

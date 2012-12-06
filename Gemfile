@@ -49,3 +49,4 @@ gem 'omniauth-twitter'
 
 gem 'nokogiri'
 
+gem 'paperclip-dropbox'
