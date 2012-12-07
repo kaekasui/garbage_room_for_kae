@@ -3,7 +3,7 @@
   <div class="control-group">
     <%= f.label :created_at, class: 'control-label' %><%= mark_required(@admin_blog_comment, :created_at) %>
     <div class="controls">
-      <%= f.datetime_select :created_at, datetime_separator: "　", include_seconds: true, use_month_numbers: true, class: "date_time" %>
+      <%= f.datetime_select :created_at, datetime_separator: "　", include_seconds: true, use_month_numbers: true, start_year: 2006, class: "date_time" %>
     </div>
   </div>
 
