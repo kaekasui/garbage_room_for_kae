@@ -48,5 +48,3 @@ gem "twitter-bootstrap-rails"
 gem 'omniauth-twitter'
 
 gem 'nokogiri'
-
-gem 'paperclip-dropbox'
