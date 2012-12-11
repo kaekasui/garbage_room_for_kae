@@ -7,7 +7,9 @@ add_event = (button_id, textarea_id) ->
   (e) ->
     value = $(textarea_id).val()
     value += "\n"
+    value += "<img src='"
     value += e.files[0].link
+    value += "' />"
     $(textarea_id).val(value)
   , false)
 
