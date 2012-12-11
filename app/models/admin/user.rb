@@ -1,6 +1,6 @@
 class Admin::User < ActiveRecord::Base
   # attr_accessible :title, :body
-  set_table_name :users
+  self.table_name = "users"
 
   def self.create_with_omniauth(auth)
     user = User.new

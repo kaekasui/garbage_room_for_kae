@@ -1,5 +1,5 @@
 class Admin::Blog < ActiveRecord::Base
-  set_table_name :blogs
+  self.table_name = "blogs"
 
   has_many :blog_comments
 

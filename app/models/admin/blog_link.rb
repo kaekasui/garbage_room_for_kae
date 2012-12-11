@@ -1,5 +1,5 @@
 class Admin::BlogLink < ActiveRecord::Base
-  set_table_name :blog_links
+  self.table_name = "blog_links"
 
   default_scope where("deleted_at is null")
 

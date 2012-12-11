@@ -1,5 +1,5 @@
 class Admin::BlogComment < ActiveRecord::Base
-  set_table_name :blog_comments
+  self.table_name = "blog_comments"
 
   belongs_to :blog
 
