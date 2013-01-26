@@ -46,6 +46,11 @@ gem 'taps'
 gem "twitter-bootstrap-rails"
 
 # OmniAuth
+gem 'oauth'
 gem 'omniauth-twitter'
 
 gem 'nokogiri'
+
+# dropbox
+gem 'dropbox'
+gem 'dropbox-sdk'

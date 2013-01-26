@@ -16,32 +16,42 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= t("menu.admin") %><span class="caret"></span></a>
             <ul class="dropdown-menu">
+              <% if session[:dropbox_session] %>
               <li><%= link_to t("menu.admin_blog"), new_admin_blog_path %></li>
               <li><%= link_to t("menu.admin_updated_information"), root_path %></li>
               <li><%= link_to t("menu.admin_dashboard"), root_path %></li>
               <li><%= link_to t("menu.admin_setting"), admin_versions_path %></li>
+              <% else %>
+              <li><%= link_to t("menu.admin_dropbox"), url_for(controller: "sessions", action: "callback_dropbox") %></li>
+              <% end %>
             </ul> 
           </li>
-        <% end %>
+          <% end %>
 
         </ul>
 
         <ul class="nav pull-right">
         <% if current_user %>
           <li><%= link_to "@" + current_user.screen_name, "https://twitter.com/#{current_user.screen_name}", target: "_blank" %></li>
-          <li><%= link_to "Logout" , logout_path %></li>
-        <% else %>
+        <% end %>
           <li class="dropdown" id="menu1">
             <a href="#menu1" class="dropdown-toggle" data-toggle="dropdown">
               <%= t("menu.my_account") %>
               <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
+            <% unless current_user %>
               <li><%= link_to "Twitterでログイン", "/auth/twitter" %></li>
+            <% end %>
               <li><%#= link_to "facebookでログイン", "/auth/facebook" %></li>
+            <% unless session[:dropbox_session] %>
+              <li><%= link_to "Dropboxでログイン", "/auth/dropbox" %></li>
+            <% end %>
+              <% if current_user or session[:dropbox_session] %>
+                <li><%= link_to "Logout" , logout_path %></li>
+              <% end %>
             </ul>
           </li>
-        <% end %>
         </ul>
       </div>
     </div>

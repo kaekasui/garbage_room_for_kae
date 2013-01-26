@@ -47,6 +47,7 @@ ja:
     blog: "BLOG"
     blog_text: "ヵェのブログです。日々のクダらない日常や、ホームページ運用、絵の進行状況、そしてオンラインゲームでの出来事などヵェの人生を綴っています。"
     admin: "管理"
+    admin_dropbox: "Dropbox認証"
     admin_blog: "ブログ"
     admin_updated_information: "更新情報"
     admin_dashboard: "ダッシュボード"
