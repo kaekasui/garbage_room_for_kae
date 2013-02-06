@@ -18,6 +18,15 @@ class Admin::User < ActiveRecord::Base
     return user
   end
 
+  def self.create_with_dropbox_omniauth(uid)
+    user = User.new
+    user[:provider] = "dropbox"
+    user[:uid] = uid
+
+    user.save
+    user
+  end
+
   def self.admin?
     self.admin
   end
