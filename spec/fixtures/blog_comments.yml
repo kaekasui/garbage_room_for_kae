@@ -1,0 +1,11 @@
+blog_comment1:
+  id: 1
+  blog_id: 1
+  author: "投稿者"
+  content: "メッセージ"
+
+blog_comment2:
+  id: 2
+  blog_id: 1
+  author: "投稿者"
+  content: "メッセージ"

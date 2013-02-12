@@ -1,0 +1,13 @@
+blog1:
+  id: 1
+  title: "タイトル"
+  contents1: "コンテンツ1"
+  contents2: "コンテンツ2"
+  draft: false
+
+blog2:
+  id: 2
+  title: "タイトル"
+  contents1: "コンテンツ1"
+  contents2: "コンテンツ2"
+  draft: true

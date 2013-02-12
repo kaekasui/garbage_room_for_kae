@@ -1,12 +1,14 @@
+# language: ja
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.6'
+gem 'rails', '3.2.11'
+gem 'rack', '1.4.4'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2', '0.3.11'
-#gem 'mysql', '2.8.1'
+#gem 'mysql2', '0.3.11'
+gem 'mysql', '2.8.1'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -50,6 +52,17 @@ gem 'oauth'
 gem 'omniauth-twitter'
 
 gem 'nokogiri'
+
+# Rspec & Cucumber
+group :development, :test do
+  gem "rspec-rails"
+  gem "cucumber-rails", :require => false
+  gem "cucumber-rails-training-wheels"
+  gem "capybara"
+  gem "database_cleaner"
+  gem "spork"
+  gem "launchy"
+end
 
 # dropbox
 gem 'dropbox'
