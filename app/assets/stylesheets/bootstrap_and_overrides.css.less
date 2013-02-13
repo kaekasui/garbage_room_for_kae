@@ -29,3 +29,93 @@
 //
 // Example:
 // @linkColor: #ff0000;
+
+@linkColor:  #336633;
+
+@media (min-width: 980px) {
+  body {
+//    background-image: url("background_images/clover.jpg");
+    padding-top: 60px;
+    padding-left: 20px;
+
+    label {
+      display: inline;
+    }
+
+    img {
+      .icon {
+        margin-right: 7px;
+      }
+    }
+
+    .navbar .brand {
+      color: #f0fff0;
+    }
+
+    .nav > li > a:hover {
+      background-color: #f0fff0;
+    }
+
+    .nav li.inline a {
+      display: inline;
+    }
+
+    .well {
+      background-color: #f0fff0;
+      .h4 {
+        color: #336633;
+      }
+      h4 {
+        margin-bottom: 10px;
+        color: #1a331a;
+      }
+    }
+
+    .table {
+      th, td {
+        border-top: 0 none;
+
+        .text_right {
+          text-align: right;
+        }
+        tbody tr:hover {
+          background-color: transparent;
+        }
+      }
+    }
+
+    .table-striped tbody {
+      tr:nth-child(2n+1) {
+        td, th {
+          background-color: #f0fff0;
+        }
+      }
+    }
+
+    span.require_mark {
+      color: red;
+      float: left;
+    }
+
+    .form-horizontal {
+      select {
+        width: 60px;
+      }
+    }
+
+    .form-actions {
+      background-color: #f0fff0;
+    }
+
+    // kaminari
+    .pagination {
+      .active a {
+        color: #336633;
+        background-color: #f0fff0;
+      }
+      a:hover {
+        background-color: #f0fff0;
+      }
+    }
+  }
+}
