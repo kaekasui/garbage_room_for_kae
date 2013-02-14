@@ -13,9 +13,8 @@ describe Blog do
   end
 
   it '一般ユーザーは、記事を作成できないこと' do
-#    blog = Blog.new(blogs(:blog1))
-    #blog.update_attributes(blogs(:blog1))
-#    blog.save.should be_true
-    true.should be_true
+    pending "attr_accessibileのテスト"
+    @blog = blogs(:blog1)
+    @blog.save.should be_true
   end
 end
