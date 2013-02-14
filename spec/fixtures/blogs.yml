@@ -11,3 +11,31 @@ blog2:
   contents1: "コンテンツ1"
   contents2: "コンテンツ2"
   draft: true
+
+blog3:
+  id: 3
+  title: "タイトル"
+  contents1: "コンテンツ1"
+  contents2: "コンテンツ2"
+  draft: true
+
+blog4:
+  id: 4
+  title: "タイトル"
+  contents1: "コンテンツ1"
+  contents2: "コンテンツ2"
+  draft: false
+
+blog5:
+  id: 5
+  title: "タイトル"
+  contents1: "コンテンツ1"
+  contents2: "コンテンツ2"
+  draft: false
+
+blog6:
+  id: 6
+  title: "タイトル"
+  contents1: "コンテンツ1"
+  contents2: "コンテンツ2"
+  draft: false
