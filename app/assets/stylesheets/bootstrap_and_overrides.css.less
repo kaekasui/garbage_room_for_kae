@@ -34,7 +34,7 @@
 
 @media (min-width: 980px) {
   body {
-//    background-image: url("background_images/clover.jpg");
+    background-image: url("background_images/clover.jpg");
     padding-top: 60px;
     padding-left: 20px;
 
@@ -42,26 +42,13 @@
       display: inline;
     }
 
-    img {
-      .icon {
+    .icon {
         margin-right: 7px;
-      }
-    }
-
-    .navbar .brand {
-      color: #f0fff0;
-    }
-
-    .nav > li > a:hover {
-      background-color: #f0fff0;
-    }
-
-    .nav li.inline a {
-      display: inline;
     }
 
     .well {
-      background-color: #f0fff0;
+      background-color:rgba(240,255,240,0.7);
+      border: 1px solid #f0fff0;
       .h4 {
         color: #336633;
       }
@@ -74,13 +61,12 @@
     .table {
       th, td {
         border-top: 0 none;
-
-        .text_right {
-          text-align: right;
-        }
         tbody tr:hover {
           background-color: transparent;
         }
+      }
+      .text_right {
+        text-align: right;
       }
     }
 
@@ -99,7 +85,7 @@
 
     .form-horizontal {
       select {
-        width: 60px;
+        width: 70px;
       }
     }
 
@@ -109,13 +95,44 @@
 
     // kaminari
     .pagination {
-      .active a {
-        color: #336633;
-        background-color: #f0fff0;
-      }
-      a:hover {
+      ul li > a:hover, ul > li > a:focus, ul > .active > a, ul > .active > span {
+        color: #339933;
         background-color: #f0fff0;
       }
     }
   }
 }
+
+.navbar {
+  .nav > li > a {
+    text-shadow: none;
+  }
+
+  .nav > li > a:focus, .nav > li > a:hover {
+    background-color: transparent;
+    color: #336633;
+  }
+
+  .nav li.dropdown.open > .dropdown-toggle, .nav li.dropdown.active > .dropdown-toggle, .nav li.dropdown.open.active > .dropdown-toggle {
+    background-color: transparent;
+    color: #336633;
+  }
+
+  .brand {
+    color: #f0fff0;
+    text-shadow: none;
+  }
+}
+
+.navbar-inner {
+  background-image: linear-gradient(to bottom, #000000, #003300)
+}
+
+.nav > li > a:hover {
+   background-color: #f0fff0;
+}
+
+.nav li.inline a {
+  display: inline;
+}
+

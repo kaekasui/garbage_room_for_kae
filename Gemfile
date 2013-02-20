@@ -7,8 +7,8 @@ gem 'rack', '1.4.4'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-#gem 'mysql2', '0.3.11'
-gem 'mysql', '2.8.1'
+gem 'mysql2', '0.3.11'
+#gem 'mysql', '2.8.1'
 
 gem 'less-rails'
 gem 'therubyracer'

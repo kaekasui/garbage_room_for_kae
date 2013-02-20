@@ -1,4 +1,6 @@
-<%= paginate @blogs %>
-<table class="table">
-  <%= render :partial => @blogs, :spacer_template => "separator" %>
-</table>
+<div class="well">
+  <%= paginate @blogs %>
+  <table class="table">
+    <%= render :partial => @blogs, :spacer_template => "separator" %>
+  </table>
+</div>
