@@ -1,17 +1,20 @@
-<table class="table">
-  <%= render partial: "exordium", locals: {blog: @blog} %>
-  <tr>
-    <td colspan="2"><%= raw to_br(@blog.contents2).html_safe %></td>
-  </tr>
-  <tr>
-    <td colspan="2" class="text_right"><%= link_to "Comments(" + @blog.count_comments.to_s + ")", blog_path(anchor: "blog_comments") %></td>
-  </tr>
-</table>
+<div class="well">
+  <table class="table">
+    <%= render partial: "exordium", locals: {blog: @blog} %>
+    <tr>
+      <td colspan="2"><%= raw to_br(@blog.contents2).html_safe %></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="text_right"><%= link_to "Comments(" + @blog.count_comments.to_s + ")", blog_path(anchor: "blog_comments") %></td>
+    </tr>
+  </table>
+</div>
+<div class="well">
+  <%= form_for @blog_comment, html: {class: 'form-horizontal'}, url: blog_blog_comments_path(blog_id: @blog.id), remote: true do |f| %>
+    <%= render partial: "blog_comments/form", locals: {f: f} %>
+  <% end %>
 
-<%= form_for @blog_comment, html: {class: 'form-horizontal'}, url: blog_blog_comments_path(blog_id: @blog.id), remote: true do |f| %>
-  <%= render partial: "blog_comments/form", locals: {f: f} %>
-<% end %>
-
-<div class="table" id="blog_comments">
-  <%= render :partial => @blog_comments, :spacer_template => "blog_comments/separator" %>
+  <div class="table" id="blog_comments">
+    <%= render :partial => @blog_comments, :spacer_template => "blog_comments/separator" %>
+  </div>
 </div>
