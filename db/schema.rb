@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121010232700) do
+ActiveRecord::Schema.define(:version => 20130323141303) do
 
   create_table "admin_versions", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20121010232700) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.datetime "deleted_at"
+    t.boolean  "fc2"
   end
 
   create_table "blog_links", :force => true do |t|
